@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>moertl advisory — Brand Styleguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy-deep: #0A1628;
+    --navy-mid:  #0F1E33;
+    --navy-soft: #142840;
+    --line:      rgba(255,255,255,.10);
+    --line-soft: rgba(255,255,255,.06);
+    --white:     #FFFFFF;
+    --grey-1:    #C8CEDA;
+    --grey-2:    #8A95A3;
+    --grey-3:    #5A6577;
+    --red:       #D72638;
+    --red-bright:#E63946;
+    --copper:    #B08D57;
+
+    --f-display: "Instrument Serif", Georgia, serif;
+    --f-body:    "Geist", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--navy-deep);
+    color:var(--white);
+    font-family:var(--f-body);
+    font-weight:400;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .page{
+    max-width:1120px;
+    margin:0 auto;
+    padding:64px 48px 96px;
+  }
+
+  /* Header */
+  .sg-header{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:48px;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+    padding-bottom:48px;
+    margin-bottom:64px;
+  }
+  .sg-header img{height:140px;width:auto;display:block}
+  .sg-header h1{
+    font-family:var(--f-display);
+    font-weight:400;
+    font-size:48px;
+    line-height:1.1;
+    letter-spacing:-.02em;
+    margin:0 0 12px;
+  }
+  .sg-header h1 em{font-style:italic;color:var(--grey-1)}
+  .sg-header h1 .dot{color:var(--red)}
+  .sg-header .meta{
+    font-size:13px;
+    color:var(--grey-2);
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+
+  /* Section */
+  section{margin:0 0 72px}
+  .sg-eyebrow{
+    display:inline-flex;align-items:center;gap:14px;
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--grey-2);
+    margin-bottom:20px;
+  }
+  .sg-eyebrow::before{
+    content:"";
+    width:32px;height:1px;background:var(--red);
+  }
+  section > h2{
+    font-family:var(--f-display);
+    font-weight:400;
+    font-size:36px;
+    line-height:1.1;
+    letter-spacing:-.015em;
+    margin:0 0 28px;
+  }
+  section > h2 em{font-style:italic;color:var(--grey-1)}
+  section > h2 .dot{color:var(--red)}
+  section > .intro{
+    font-size:16px;line-height:1.7;color:var(--grey-1);font-weight:300;
+    max-width:680px;margin:0 0 36px;
+  }
+
+  /* Color swatches */
+  .colors{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+  }
+  .swatch{
+    background:var(--navy-mid);
+    padding:24px 20px 20px;
+    min-height:170px;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .swatch .chip{
+    width:48px;height:48px;
+    border:1px solid rgba(255,255,255,.1);
+    margin-bottom:14px;
+  }
+  .swatch .name{
+    font-size:13px;
+    color:var(--white);
+    font-weight:500;
+    margin-bottom:4px;
+  }
+  .swatch .hex{
+    font-family:"SFMono-Regular", Menlo, Consolas, monospace;
+    font-size:12px;
+    color:var(--grey-2);
+    letter-spacing:.02em;
+  }
+  .swatch .role{
+    font-size:11.5px;
+    color:var(--grey-3);
+    line-height:1.45;
+    margin-top:10px;
+  }
+
+  /* Typography */
+  .type-row{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:32px;
+    padding:24px 0;
+    border-bottom:1px solid var(--line-soft);
+    align-items:baseline;
+  }
+  .type-row:last-child{border-bottom:0}
+  .type-label{
+    font-size:11.5px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--grey-2);
+  }
+  .type-label small{
+    display:block;
+    font-family:"SFMono-Regular", Menlo, Consolas, monospace;
+    font-size:11px;
+    color:var(--grey-3);
+    letter-spacing:.02em;
+    margin-top:6px;
+    text-transform:none;
+  }
+  .type-sample.display{
+    font-family:var(--f-display);
+    color:var(--white);
+  }
+  .type-sample.body{
+    font-family:var(--f-body);
+    color:var(--grey-1);
+  }
+  .t-h1{font-size:64px;line-height:1.04;letter-spacing:-.025em;font-weight:400}
+  .t-h1 em{font-style:italic;color:var(--grey-1)}
+  .t-h1 .dot{color:var(--red)}
+  .t-h2{font-size:44px;line-height:1.08;letter-spacing:-.02em;font-weight:400;font-style:italic}
+  .t-claim{font-size:24px;font-style:italic;color:var(--copper);line-height:1.4}
+  .t-lead{font-size:18px;line-height:1.65;font-weight:300}
+  .t-body{font-size:16px;line-height:1.65;font-weight:400}
+  .t-eyebrow{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--grey-2);font-weight:400;
+  }
+
+  /* Logo block */
+  .logo-block{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+  }
+  .logo-card{
+    padding:48px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    min-height:280px;
+  }
+  .logo-card.on-dark{background:var(--navy-deep)}
+  .logo-card.on-light{background:#F5F2EC}
+  .logo-card img{height:120px;width:auto}
+  /* PNG ist weiß-auf-transparent — auf hellem Hintergrund invertiert simuliert die spätere Navy-Variante */
+  .logo-card.on-light img{filter:invert(1) brightness(.18) saturate(1.5)}
+  .logo-card .cap{
+    margin-top:24px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-3);
+  }
+  .logo-card.on-light .cap{color:#5A6577}
+
+  /* Notes */
+  .notes{
+    background:var(--navy-mid);
+    border:1px solid var(--line-soft);
+    padding:36px 40px;
+  }
+  .notes h3{
+    font-family:var(--f-display);
+    font-weight:400;
+    font-style:italic;
+    font-size:22px;
+    margin:0 0 12px;
+    color:var(--white);
+  }
+  .notes p{
+    font-size:15px;line-height:1.7;color:var(--grey-1);font-weight:300;
+    margin:0 0 14px;
+  }
+  .notes p:last-child{margin:0}
+  .notes strong{color:var(--white);font-weight:500}
+
+  .voice-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+  }
+  .voice-col{
+    background:var(--navy-mid);
+    padding:32px 36px;
+  }
+  .voice-col h4{
+    font-family:var(--f-body);
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    margin:0 0 18px;
+  }
+  .voice-col.do h4{color:var(--copper)}
+  .voice-col.dont h4{color:var(--red)}
+  .voice-col ul{
+    margin:0;padding:0;list-style:none;
+  }
+  .voice-col li{
+    font-size:14.5px;line-height:1.65;color:var(--grey-1);font-weight:300;
+    padding:8px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .voice-col li:last-child{border-bottom:0}
+
+  /* Footer */
+  footer{
+    border-top:1px solid var(--line);
+    margin-top:64px;
+    padding-top:32px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
+    font-size:12px;color:var(--grey-3);
+  }
+
+  @media (max-width: 840px){
+    .page{padding:40px 24px 64px}
+    .sg-header{grid-template-columns:1fr;gap:32px;text-align:left}
+    .sg-header img{height:96px}
+    .sg-header h1{font-size:36px}
+    .colors{grid-template-columns:repeat(2, 1fr)}
+    .type-row{grid-template-columns:1fr;gap:8px}
+    .logo-block{grid-template-columns:1fr}
+    .voice-grid{grid-template-columns:1fr}
+    .t-h1{font-size:44px}
+    .t-h2{font-size:32px}
+  }
+
+  /* Print */
+  @media print{
+    body{background:white;color:#0A1628}
+    .page{padding:24px}
+    .swatch, .logo-card.on-dark, .notes, .voice-col{background:white;color:#0A1628}
+    .type-sample.display, .type-sample.body{color:#0A1628}
+    .swatch .name, .voice-col li, .notes p{color:#0A1628}
+    .swatch .hex, .swatch .role, .type-label, .sg-eyebrow{color:#5A6577}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="sg-header">
+    <img src="moertl-advisory-logo.png" alt="moertl advisory Logo">
+    <div>
+      <div class="meta">Brand Styleguide · v1.0 · Mai 2026</div>
+      <h1 style="margin-top:14px">moertl <em>transformation advisory</em><span class="dot">.</span></h1>
+      <p style="font-family:var(--f-display);font-style:italic;color:var(--copper);font-size:20px;margin:14px 0 0">
+        Strategie. Transformation. Ergebnisse.
+      </p>
+    </div>
+  </header>
+
+  <!-- LOGO -->
+  <section>
+    <span class="sg-eyebrow">01 — Logo</span>
+    <h2>Das Zeichen<span class="dot">.</span></h2>
+    <p class="intro">
+      Das aktuelle Logo liegt als PNG vor (512×512 px, transparenter Hintergrund — bei Bedarf prüfen).
+      Für die Website ist eine <strong>SVG-Variante</strong> wünschenswert: gestochen scharf bei jeder
+      Größe, kleinere Dateigröße, einfärbbar per CSS.
+    </p>
+
+    <div class="logo-block">
+      <div class="logo-card on-dark">
+        <img src="moertl-advisory-logo.png" alt="Logo auf dunklem Hintergrund">
+        <div class="cap">Auf Navy (#0A1628)</div>
+      </div>
+      <div class="logo-card on-light">
+        <img src="moertl-advisory-logo.png" alt="Logo auf hellem Hintergrund">
+        <div class="cap">Auf Hell (#F5F2EC)</div>
+      </div>
+    </div>
+
+    <div class="notes" style="margin-top:24px">
+      <h3>Hinweise für den Designer</h3>
+      <p>
+        <strong>Gewünschte Lieferung:</strong> SVG (Vektor) — eine Version für dunklen Hintergrund (weiß/hell)
+        und eine für hellen Hintergrund (navy). Idealerweise als <em>einzelne SVG-Datei</em> mit
+        <code>currentColor</code> für die Füllung, damit sie per CSS umschaltbar wird.
+      </p>
+      <p>
+        <strong>Sichtbare Mindestgröße:</strong> 32 px Höhe (mobile Navigation).
+        <strong>Maximale Höhe in der Navigation aktuell:</strong> 112 px (Desktop).
+        <strong>Schutzraum:</strong> mindestens ein halbes „M"-Element rundum freilassen.
+      </p>
+    </div>
+  </section>
+
+  <!-- COLORS -->
+  <section>
+    <span class="sg-eyebrow">02 — Farbpalette</span>
+    <h2>Farben<span class="dot">.</span></h2>
+    <p class="intro">
+      Dunkles Navy als Grundton, Rot als Akzent für Entscheidungs- und CTA-Momente,
+      Kupfer als Markenton für italic-gesetzte Aussagen. Grautöne tragen die Hierarchie.
+    </p>
+
+    <div class="colors">
+      <div class="swatch">
+        <div>
+          <div class="chip" style="background:#0A1628"></div>
+          <div class="name">Navy Deep</div>
+          <div class="hex">#0A1628</div>
+        </div>
+        <div class="role">Hintergrund Hauptflächen, Logo-Hintergrund</div>
+      </div>
+      <div class="swatch">
+        <div>
+          <div class="chip" style="background:#0F1E33"></div>
+          <div class="name">Navy Mid</div>
+          <div class="hex">#0F1E33</div>
+        </div>
+        <div class="role">Section-Hintergrund (Method, Hover-State Tiles)</div>
+      </div>
+      <div class="swatch">
+        <div>
+          <div class="chip" style="background:#142840"></div>
+          <div class="name">Navy Soft</div>
+          <div class="hex">#142840</div>
+        </div>
+        <div class="role">Akzentflächen, Karten-Hintergrund</div>
+      </div>
+      <div class="swatch">
+        <div>
+          <div class="chip" style="background:#D72638"></div>
+          <div class="name">Red</div>
+          <div class="hex">#D72638</div>
+        </div>
+        <div class="role">Akzent: Punkt, Linien, Hover, Auswahl</div>
+      </div>
+
+      <div class="swatch">
+        <div>
+          <div class="chip" style="background:#E63946"></div>
+          <div class="name">Red Bright</div>
+          <div class="hex">#E63946</div>
+        </div>
+        <div class="role">Selten — z. B. für aktive States</div>
+      </div>
+      <div class="swatch">
+        <div>
+          <div class="chip" style="background:#B08D57"></div>
+          <div class="name">Copper</div>
+          <div class="hex">#B08D57</div>
+        </div>
+        <div class="role">Italic-Claims, dezente Akzente</div>
+      </div>
+      <div class="swatch">
+        <div>
+          <div class="chip" style="background:#FFFFFF"></div>
+          <div class="name">White</div>
+          <div class="hex">#FFFFFF</div>
+        </div>
+        <div class="role">Headlines, Hauptkontrast</div>
+      </div>
+      <div class="swatch">
+        <div>
+          <div class="chip" style="background:#C8CEDA"></div>
+          <div class="name">Grey 1</div>
+          <div class="hex">#C8CEDA</div>
+        </div>
+        <div class="role">Fließtext auf dunklem Grund</div>
+      </div>
+
+      <div class="swatch">
+        <div>
+          <div class="chip" style="background:#8A95A3"></div>
+          <div class="name">Grey 2</div>
+          <div class="hex">#8A95A3</div>
+        </div>
+        <div class="role">Eyebrow-Labels, sekundäre Texte</div>
+      </div>
+      <div class="swatch">
+        <div>
+          <div class="chip" style="background:#5A6577"></div>
+          <div class="name">Grey 3</div>
+          <div class="hex">#5A6577</div>
+        </div>
+        <div class="role">Metadaten, Captions, Footer</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section>
+    <span class="sg-eyebrow">03 — Typografie</span>
+    <h2>Schrift<span class="dot">.</span></h2>
+    <p class="intro">
+      Zwei Schriften, zwei Rollen: <strong>Instrument Serif</strong> für Headlines und Italic-Claims —
+      ruhig, klassisch, mit Charakter. <strong>Geist</strong> für alle Lauftexte und UI-Elemente —
+      modern, neutral, präzise.
+    </p>
+
+    <div class="type-row">
+      <div class="type-label">Display H1<small>Instrument Serif · 64px · 1.04</small></div>
+      <div class="type-sample display t-h1">30 Jahre Verantwortung — <em>und was daraus geworden ist</em><span class="dot">.</span></div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Display H2<small>Instrument Serif Italic · 44px · 1.08</small></div>
+      <div class="type-sample display t-h2">und Klarheit brauchen.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Claim<small>Instrument Serif Italic · 24px · Copper</small></div>
+      <div class="type-sample display t-claim">Nah genug an strategischen Entscheidungen, tief genug in Architektur, Organisation und Umsetzung.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Lead<small>Geist 300 · 18px · 1.65</small></div>
+      <div class="type-sample body t-lead">Ich kenne Vorstandsentscheidungen nicht aus der Theorie, sondern aus jahrelanger Arbeit in ihrer unmittelbaren Nähe.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Body<small>Geist 400 · 16px · 1.65</small></div>
+      <div class="type-sample body t-body">Daraus entsteht ein Beratungstyp, der unbequem werden darf. Der die richtige Frage stellt, bevor er eine Antwort verkauft.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Eyebrow<small>Geist 400 · 12px · uppercase · letter-spacing .22em</small></div>
+      <div class="type-sample body t-eyebrow">— Positionierung</div>
+    </div>
+  </section>
+
+  <!-- TONE / VOICE -->
+  <section>
+    <span class="sg-eyebrow">04 — Sprache &amp; Ton</span>
+    <h2>Wie wir klingen<span class="dot">.</span></h2>
+    <p class="intro">
+      Senior, ruhig, präzise. Wir verkaufen nicht — wir erklären, ordnen ein, geben Orientierung.
+      Glaubwürdigkeit entsteht durch Klarheit, nicht durch Lautstärke.
+    </p>
+
+    <div class="voice-grid">
+      <div class="voice-col do">
+        <h4>So klingt es</h4>
+        <ul>
+          <li>„Ich kenne Vorstandsentscheidungen aus jahrelanger Arbeit in ihrer unmittelbaren Nähe."</li>
+          <li>„Wenn ein Gespräch der nächste Schritt ist — schreiben Sie mir."</li>
+          <li>„Drei Wege. Ich antworte persönlich, nicht über ein Office."</li>
+          <li>Positive Formulierungen. Konkrete Rollen statt Buzzwords.</li>
+          <li>Italic-Akzente für Haltung, nicht für Effekt.</li>
+        </ul>
+      </div>
+      <div class="voice-col dont">
+        <h4>So nicht</h4>
+        <ul>
+          <li>„Jetzt buchen", „Kostenlose Erstberatung sichern!"</li>
+          <li>„Ich war nicht Vorstand." — defensiv, lenkt auf Nicht-Rolle.</li>
+          <li>Bullet-Listen mit Versprechen.</li>
+          <li>Übertriebene Großschreibung, Ausrufezeichen.</li>
+          <li>Marketing-Klischees: „passioniert", „leidenschaftlich", „game-changing".</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN PRINCIPLES -->
+  <section>
+    <span class="sg-eyebrow">05 — Layout-Prinzipien</span>
+    <h2>Wie es aufgebaut ist<span class="dot">.</span></h2>
+
+    <div class="notes">
+      <h3>Sektion-Pattern</h3>
+      <p>
+        Jede Section folgt der gleichen Logik: <strong>Eyebrow</strong> (kurzes Label, rot unterstrichen)
+        → <strong>H2</strong> (Display-Serif, Italic-Akzent, roter Punkt am Ende) →
+        <strong>Body-Text</strong> oder Grid mit Kacheln. Zwischen den Sections trennen feine
+        1-px-Linien in <code>--line-soft</code>.
+      </p>
+      <p>
+        <strong>Vertikale Rhythmen:</strong> Section-Padding <code>clamp(96px, 14vw, 168px)</code>,
+        Container <code>max-width: 1240px</code>, horizontaler Gutter
+        <code>clamp(20px, 4vw, 56px)</code>.
+      </p>
+      <p>
+        <strong>Akzente sparsam:</strong> Rote Punkte und Linien geben Rhythmus. Kupfer für
+        Italic-Claims. Keine Schatten, kein Gradient-Overload, keine bunten Buttons.
+        Die Wirkung entsteht durch <em>Weißraum</em> und ruhige Typografie.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2026 moertl transformation advisory</div>
+    <div>Im Akazienhain 10 · 71116 Gärtringen / Germany</div>
+    <div>hans@moertl-advisory.com</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
