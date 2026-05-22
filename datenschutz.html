@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Datenschutz — moertl advisory</title>
+<meta name="theme-color" content="#0A1628">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy-deep:#0A1628; --navy-mid:#0F1E33; --line:rgba(255,255,255,.10); --line-soft:rgba(255,255,255,.06);
+    --white:#FFFFFF; --grey-1:#C8CEDA; --grey-2:#8A95A3; --grey-3:#5A6577; --red:#D72638; --copper:#B08D57;
+    --f-display:"Instrument Serif",Georgia,serif;
+    --f-body:"Geist",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --gutter:clamp(20px,4vw,56px);
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--navy-deep);color:var(--white);font-family:var(--f-body);font-size:16px;line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:880px;margin:0 auto;padding:0 var(--gutter)}
+
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);background:rgba(10,22,40,.72);border-bottom:1px solid var(--line-soft)}
+  .nav-inner{max-width:1240px;margin:0 auto;padding:8px var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand-row{display:flex;align-items:center;gap:22px}
+  .brand img{display:block;height:80px;width:auto}
+  .beta-stamp{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.22em;color:var(--red);border:1.5px solid var(--red);padding:3px 10px 2px;transform:rotate(-9deg);text-transform:uppercase;line-height:1}
+  .nav-back{font-size:14px;color:var(--grey-1);border-bottom:1px solid var(--line);padding-bottom:4px}
+  .nav-back:hover{border-color:var(--red);color:var(--white)}
+
+  header.page-head{padding:160px 0 64px}
+  .page-head .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey-2);margin-bottom:24px}
+  .page-head .eyebrow::before{content:"";width:32px;height:1px;background:var(--red)}
+  .page-head h1{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,5.6vw,64px);line-height:1.06;letter-spacing:-.02em;margin:0 0 16px}
+  .page-head h1 .dot{color:var(--red)}
+  .page-head p.intro{font-size:17px;color:var(--grey-1);font-weight:300;max-width:640px;margin:0}
+
+  main{padding:0 0 96px;border-top:1px solid var(--line-soft)}
+  main section{padding:48px 0;border-bottom:1px solid var(--line-soft)}
+  main section:last-of-type{border-bottom:0}
+  main h2{font-family:var(--f-display);font-weight:400;font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 24px;color:var(--white)}
+  main h2 em{font-style:italic;color:var(--grey-1)}
+  main h3{font-family:var(--f-body);font-weight:500;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-2);margin:24px 0 10px}
+  main p{font-size:16px;line-height:1.7;color:var(--grey-1);font-weight:300;margin:0 0 14px}
+  main p strong{color:var(--white);font-weight:500}
+  main ul{margin:0 0 14px;padding:0 0 0 22px;color:var(--grey-1);font-weight:300}
+  main ul li{margin-bottom:8px;line-height:1.65}
+  main a.link{border-bottom:1px solid var(--line);padding-bottom:1px;transition:border-color .2s ease}
+  main a.link:hover{border-color:var(--red);color:var(--white)}
+
+  footer{border-top:1px solid var(--line-soft);padding:32px 0;background:var(--navy-deep);font-size:13px;color:var(--grey-3)}
+  .foot-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .foot-links{display:flex;gap:24px}
+  .foot-links a{color:var(--grey-2)}
+  .foot-links a:hover{color:var(--white)}
+
+  @media (max-width:540px){
+    .brand img{height:56px}
+    header.page-head{padding:120px 0 48px}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand-row">
+      <a href="/" class="brand" aria-label="moertl advisory — Startseite">
+        <img src="assets/moertl-advisory-logo.png" alt="moertl advisory">
+      </a>
+      <span class="beta-stamp">Beta</span>
+    </div>
+    <a href="/" class="nav-back">← Zurück zur Startseite</a>
+  </div>
+</header>
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Rechtliches</span>
+    <h1>Datenschutz<span class="dot">.</span></h1>
+    <p class="intro">Informationen zur Verarbeitung personenbezogener Daten nach Art. 13/14 DSGVO.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section>
+      <h2>Verantwortlicher<em>.</em></h2>
+      <p>
+        <strong>Hans Moertl</strong><br>
+        moertl transformation advisory<br>
+        Im Akazienhain 10<br>
+        71116 Gärtringen / Germany
+      </p>
+      <p>
+        E-Mail: <a href="mailto:hans@moertl-advisory.com" class="link">hans@moertl-advisory.com</a><br>
+        Telefon: <a href="tel:+4915150651723" class="link">+49 151 506 517 23</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Allgemeines<em>.</em></h2>
+      <p>
+        Der Schutz Ihrer personenbezogenen Daten ist mir wichtig. Diese Datenschutzerklärung
+        informiert Sie darüber, welche Daten auf dieser Website verarbeitet werden, zu welchen
+        Zwecken und auf welcher Rechtsgrundlage.
+      </p>
+      <p>
+        Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
+        Die Verarbeitung erfolgt im Einklang mit der DSGVO und dem Bundesdatenschutzgesetz (BDSG).
+      </p>
+    </section>
+
+    <section>
+      <h2>Zugriffsdaten (Server-Logs)<em>.</em></h2>
+      <p>
+        Beim Aufruf dieser Website werden durch den Hosting-Provider <strong>Cloudflare</strong>
+        automatisch Informationen erfasst und in Server-Log-Dateien gespeichert:
+      </p>
+      <ul>
+        <li>anonymisierte IP-Adresse</li>
+        <li>Datum und Uhrzeit der Anfrage</li>
+        <li>aufgerufene Seite / Datei</li>
+        <li>verwendeter Browser und Betriebssystem</li>
+        <li>Referrer-URL (zuvor besuchte Seite)</li>
+      </ul>
+      <p>
+        Diese Daten werden ausschließlich zur Sicherstellung eines störungsfreien Betriebs und zur
+        Verbesserung der Website verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO
+        (berechtigtes Interesse). Eine Zusammenführung dieser Daten mit anderen Datenquellen findet
+        nicht statt.
+      </p>
+    </section>
+
+    <section>
+      <h2>Hosting bei Cloudflare<em>.</em></h2>
+      <p>
+        Diese Website wird über das Content-Delivery-Network von Cloudflare, Inc. bereitgestellt.
+        Beim Aufruf der Seite werden Verbindungsdaten an Cloudflare-Server übermittelt. Cloudflare
+        verarbeitet diese Daten zur Auslieferung der Inhalte und zur Abwehr von Sicherheits­bedrohungen
+        (Art. 6 Abs. 1 lit. f DSGVO).
+      </p>
+      <p>
+        Weitere Informationen:
+        <a href="https://www.cloudflare.com/de-de/privacypolicy/" class="link" target="_blank" rel="noopener">Cloudflare Datenschutzerklärung</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Kontaktaufnahme<em>.</em></h2>
+      <p>
+        Wenn Sie mir per E-Mail, Telefon oder über LinkedIn schreiben, werden die von Ihnen
+        übermittelten Daten (Name, Kontaktdaten, Inhalt der Nachricht) zur Bearbeitung Ihrer Anfrage
+        gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw.
+        lit. f DSGVO (berechtigtes Interesse an Korrespondenz).
+      </p>
+      <p>
+        Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter. Sie werden gelöscht, sobald die
+        Bearbeitung Ihres Anliegens abgeschlossen ist und keine gesetzlichen Aufbewahrungspflichten
+        entgegenstehen.
+      </p>
+    </section>
+
+    <section>
+      <h2>Schriften (Google Fonts)<em>.</em></h2>
+      <p>
+        Diese Website verwendet Schriftarten von Google Fonts. Beim Aufruf werden Schriftdateien von
+        Servern der Google Ireland Limited geladen, wobei Ihre IP-Adresse übermittelt wird.
+        Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (einheitliche Darstellung der Website).
+      </p>
+      <p>
+        Weitere Informationen:
+        <a href="https://policies.google.com/privacy" class="link" target="_blank" rel="noopener">Google Datenschutzerklärung</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Cookies<em>.</em></h2>
+      <p>
+        Diese Website setzt <strong>keine Cookies</strong> für Tracking, Werbung oder Analyse.
+        Es werden ausschließlich technisch notwendige Verbindungsdaten verarbeitet, soweit für den
+        Betrieb der Seite erforderlich.
+      </p>
+    </section>
+
+    <section>
+      <h2>Ihre Rechte<em>.</em></h2>
+      <p>Sie haben jederzeit das Recht auf:</p>
+      <ul>
+        <li><strong>Auskunft</strong> über die zu Ihrer Person gespeicherten Daten (Art. 15 DSGVO)</li>
+        <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO)</li>
+        <li><strong>Löschung</strong> Ihrer Daten (Art. 17 DSGVO)</li>
+        <li><strong>Einschränkung</strong> der Verarbeitung (Art. 18 DSGVO)</li>
+        <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+        <li><strong>Widerspruch</strong> gegen die Verarbeitung (Art. 21 DSGVO)</li>
+        <li><strong>Beschwerde</strong> bei einer Aufsichtsbehörde (Art. 77 DSGVO)</li>
+      </ul>
+      <p>
+        Wenden Sie sich für die Ausübung Ihrer Rechte an die oben genannten Kontaktdaten. Zuständige
+        Aufsichtsbehörde ist der Landesbeauftragte für den Datenschutz Baden-Württemberg.
+      </p>
+    </section>
+
+    <section>
+      <h2>Stand &amp; Änderungen<em>.</em></h2>
+      <p>
+        Stand dieser Datenschutzerklärung: Mai 2026. Ich behalte mir vor, diese Erklärung
+        anzupassen, sofern dies aufgrund neuer Funktionen, geänderter Rechtslage oder Hinweisen der
+        Aufsichtsbehörden erforderlich ist.
+      </p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© 2026 moertl transformation advisory</div>
+    <div class="foot-links">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
