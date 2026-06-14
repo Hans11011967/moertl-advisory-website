@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>moertl advisory — Strategie. Transformation. Ergebnisse.</title>
-<meta name="description" content="Executive Advisory für CIOs, CTOs, COOs und CDOs. Über 30 Jahre eigene C-Level-Verantwortung bei Mercedes-Benz Bank, Daimler Financial Services und NORD/LB. Self.Ops · Team.Ops · Enterprise.Ops.">
+<meta name="description" content="Executive Advisory für CIOs, Vorstände und Geschäftsführer in Banking, Automotive und Industrie. Sparringspartner für Transformation, Daten und KI. 30 Jahre eigene C-Level-Verantwortung. Self.Ops · Team.Ops · Enterprise.Ops.">
 <meta name="theme-color" content="#0A1628">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -903,6 +903,53 @@
     .beta-stamp{font-size:15px;padding:5px 13px 4px}
   }
 
+  /* ===== Anpassungsvorschlag (MLS Brands, Juni 2026) ===== */
+  .position-close{
+    margin-top:clamp(48px,7vw,88px);
+    padding-top:clamp(40px,5vw,56px);
+    border-top:1px solid var(--line-soft);
+    display:grid;gap:28px;max-width:900px;
+  }
+  .position-close-quote{
+    font-family:var(--f-display);
+    font-style:italic;
+    font-size:clamp(22px,2.6vw,32px);
+    line-height:1.32;
+    color:var(--white);
+    margin:0;
+    border-left:1px solid var(--copper);
+    padding-left:28px;
+  }
+  .position-close-quote.alt{color:var(--copper)}
+
+  .tile-cta{
+    margin-top:auto;
+    padding-top:22px;
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13.5px;color:var(--white);
+    letter-spacing:.01em;
+  }
+  .tile-cta .arrow{transition:transform .25s ease}
+  .service-tile:hover .tile-cta .arrow{transform:translateX(4px)}
+
+  .selfops-usp{
+    font-family:var(--f-display);
+    font-style:italic;
+    font-size:clamp(20px,2.2vw,28px);
+    line-height:1.3;
+    color:var(--white);
+    margin:0 0 28px;
+    padding-left:22px;
+    border-left:1px solid var(--red);
+  }
+  .selfops-group{
+    margin:24px 0 0;
+    font-size:15px;
+    color:var(--grey-1);
+    font-weight:300;
+  }
+  .selfops-group strong{color:var(--white);font-weight:500}
+
   /* Reveal animation on scroll */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
   .reveal.in{opacity:1;transform:translateY(0)}
@@ -1002,21 +1049,23 @@
   </div>
 
   <div class="wrap hero-inner">
-    <div class="hero-eyebrow">moertl transformation advisory</div>
+    <div class="hero-eyebrow">Executive Advisory · Banking · Automotive · Industrie</div>
     <h1>
-      30 Jahre Verantwortung —<br>
-      <em>und was daraus geworden ist<span class="dot">.</span></em>
+      Klarheit für Entscheider, die<br>
+      <em>Transformation wirklich verantworten<span class="dot">.</span></em>
     </h1>
     <p class="hero-lead">
-      Ich habe Transformation über viele Jahre nicht nur begleitet, sondern verantwortet:
-      in Geschäftsleitungen, in direkter Vorstandsnähe und in C-Level- sowie Bereichsleiterrollen
-      mit Verantwortung für Programme, Organisationen, Technologie und Wirkung.
+      <strong>Executive Sparring, Transformation und KI</strong> — für CIOs, Vorstände und
+      Geschäftsführer, die in Banking, Automotive oder Industrie Verantwortung tragen und
+      schnell von der Entscheidung zur Wirkung kommen wollen.
     </p>
-    <p class="hero-claim">Diese Erfahrung prägt meine Beratung — strategische Entscheidungen verstehen, ihre Umsetzbarkeit prüfen und sie so übersetzen, dass daraus tragfähige Architektur, klare Organisation und messbare Ergebnisse entstehen.</p>
+    <p class="hero-claim">Pragmatisch, auf Augenhöhe <span>·</span> in Wochen statt Monaten zu ersten Ergebnissen.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#contact">Gespräch anfragen <span class="arrow">→</span></a>
+      <a class="btn btn-primary" href="#contact">Erstgespräch anfragen <span class="arrow">→</span></a>
       <a class="btn" href="#leistungen">Leistungsportfolio ansehen</a>
     </div>
+    <!-- Anpassungsvorschlag (MLS Brands): Hier gehört ein professionelles Foto von Hans hin.
+         „Menschen kaufen Menschen." Sobald ein Foto vorliegt, rechts neben hero-inner einbauen. -->
   </div>
 
   <div class="hero-sectors" aria-label="Branchen">
@@ -1033,25 +1082,31 @@
 <section class="section" id="leistungen" aria-label="Wobei ich unterstütze">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2 style="color:var(--grey-1)">Wo Wirkung Verantwortung braucht<span class="dot" style="color:var(--red)">.</span></h2>
+      <span class="eyebrow">Angebote</span>
+      <h2 style="color:var(--grey-1)">Wir setzen dort an, <em>wo Wirkung Verantwortung braucht</em><span class="dot" style="color:var(--red)">.</span></h2>
+      <p class="section-lead" style="margin-top:18px">Vier Wege der Zusammenarbeit — vom unabhängigen Sparring bis zum praktischen KI-Einstieg. Jeder mit einem klaren ersten Schritt.</p>
     </div>
 
     <div class="services-grid reveal">
       <article class="service-tile">
         <h3>Executive Sparring</h3>
         <p>Für Entscheider, die vor wichtigen Transformations-, IT-, Daten- oder KI-Fragen eine unabhängige Perspektive auf Augenhöhe brauchen.</p>
+        <a href="#contact" class="tile-cta">Erstgespräch anfragen <span class="arrow">→</span></a>
       </article>
       <article class="service-tile">
         <h3>Transformation &amp; Re-Alignment</h3>
         <p>Wenn Programme laufen, aber Klarheit, Wirkung, Ownership oder Tempo fehlen — oder wenn neu entschieden werden muss, was wirklich trägt.</p>
+        <a href="#contact" class="tile-cta">Erstgespräch anfragen <span class="arrow">→</span></a>
       </article>
       <article class="service-tile">
         <h3>Data, AI &amp; Regulatory Transformation</h3>
         <p>Dort, wo Daten, KI, Governance, Regulierung und Technologie nicht nebeneinanderstehen dürfen, sondern gemeinsam tragfähig werden müssen.</p>
+        <a href="#contact" class="tile-cta">Erstgespräch anfragen <span class="arrow">→</span></a>
       </article>
       <article class="service-tile">
         <h3>Self.Ops / Team.Ops</h3>
         <p>Der praktische Einstieg, um KI nicht nur zu delegieren, sondern selbst zu verstehen, anzuwenden und verantwortungsvoll in Teams zu skalieren.</p>
+        <a href="#self-ops" class="tile-cta">Self.Ops ansehen <span class="arrow">→</span></a>
       </article>
     </div>
 
@@ -1064,7 +1119,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Positionierung</span>
-      <h2>Ich berate Entscheider,<br><em>die Verantwortung tragen</em> — und Klarheit brauchen<span class="dot">.</span></h2>
+      <h2>Ich berate Entscheider,<br><em>die Verantwortung tragen</em> und Klarheit brauchen<span class="dot">.</span></h2>
     </div>
 
     <div class="position-grid" style="margin-top:48px">
@@ -1073,7 +1128,7 @@
           Mein Anspruch ist nicht, Transformation abstrakt zu erklären.
           Mein Anspruch ist, Verantwortungssituationen zu verstehen:
           den Entscheidungsdruck, die Interessenlagen, die Risiken —
-          und die Frage, was am Ende wirklich tragen muss.
+          und die Frage, was am Ende wirklich tragfähig sein muss.
         </p>
         <p>
           Diese Perspektive bringe ich aus eigenen Rollen mit:
@@ -1083,13 +1138,13 @@
         </p>
         <p>
           Daraus entsteht Beratung, die nicht zuerst Antworten verkauft, sondern die richtigen Fragen stellt.
-          Die Klarheit schafft, bevor der Apparat anläuft.
+          Die Klarheit schafft, bevor das Projekt startet und die Organisation in Bewegung kommt.
           Und die weiß: <span style="color:var(--red)">Technologie schafft erst dann Wert, wenn Geschäftslogik, Organisation und Menschen sie tragen.</span>
         </p>
       </div>
       <div class="reveal">
         <p class="position-pull">
-          Beratung von jemandem, der Verantwortung selbst getragen hat —
+          Beratung von jemandem, der Verantwortung selbst getragen hat
           und die Werkzeuge nutzt, über die er spricht.
         </p>
       </div>
@@ -1196,6 +1251,12 @@
         </article>
       </div>
     </details>
+
+    <div class="position-close reveal">
+      <p class="position-close-quote">„Die Zukunft gehört nicht den Organisationen mit der besten Technologie,
+        sondern denen, die am schnellsten lernen und Veränderung wirksam umsetzen."</p>
+      <p class="position-close-quote alt">„Die Raupe wird nicht optimiert. Sie wird zum Schmetterling."</p>
+    </div>
   </div>
 </section>
 
@@ -1210,7 +1271,7 @@
       <div class="method-body reveal">
         <p>
           Wirksame Transformation beginnt nicht mit Technologie. Sie beginnt mit dem Geschäft:
-          was es leisten muss, wo Reibung entsteht, wo Wert geschaffen wird — und wo er verloren geht.
+          was es leisten muss, wo Reibung entsteht, wo Wert geschaffen wird, und wo er verloren geht.
           Erst aus diesem Verständnis entsteht eine tragfähige Architektur. Aus Architektur wird Technologie.
           Und erst wenn diese Kette hält, entsteht Wirkung.
         </p>
@@ -1246,8 +1307,8 @@
           und ob es später trägt.
         </p>
         <p>
-          <strong style="color:var(--red)">Dort setze ich an:</strong> bevor der Apparat anläuft, während er läuft oder
-          wenn er neu ausgerichtet werden muss.
+          <strong style="color:var(--red)">Dort setze ich an:</strong> bevor Entscheidungen fallen, während sie umgesetzt werden oder
+          wenn der Kurs neu justiert werden muss.
         </p>
         <p>
           Weniger Folien. Mehr belastbare Erkenntnis. Weniger „in zwei Jahren liefern wir".
@@ -1300,7 +1361,7 @@
           moderne Plattformen verkürzen diese Strecke dramatisch: zwischen Idee, Prozess,
           Entscheidung und Umsetzung liegen nicht mehr zwingend Jahre oder Monate, sondern oft nur
           noch Wochen oder Tage. Aber wer KI heute klug einsetzt, kommt nicht aus dem Hype.
-          <em style="color:var(--copper);font-style:italic">Er kommt aus Architektur — und versteht, dass Transformation immer auch Arbeit an Führung,
+          <em style="color:var(--copper);font-style:italic">Er kommt aus Architektur und versteht, dass Transformation immer auch Arbeit an Führung,
           Organisation und Verhalten ist.</em>
         </p>
       </div>
@@ -1321,6 +1382,7 @@
         <h2 class="selfops-h2">
           Beginnen Sie bei sich selbst<span class="dot">.</span>
         </h2>
+        <p class="selfops-usp">„Es beginnt nicht im Seminarraum, sondern im Arbeitsalltag."</p>
         <p class="section-lead" style="margin-bottom:22px">
           KI versteht man am besten, indem man sie anwendet — nicht, indem man Vorträge über sie hört.
           <span style="color:var(--red);font-weight:500">Self</span>.Ops beginnt deshalb nicht in einem
@@ -1330,7 +1392,7 @@
         </p>
         <p class="section-lead" style="margin-bottom:22px">
           Es geht um Selbstoptimierung im besten Sinne: nicht schneller beschäftigt sein,
-          sondern klarer arbeiten, besser vorbereiten, gezielter entscheiden — und dabei praktisch
+          sondern klarer arbeiten, besser vorbereiten, gezielter entscheiden, und dabei praktisch
           verstehen, was KI ist, was sie leisten kann und wo ihre Grenzen liegen.
         </p>
         <p class="section-lead">
@@ -1341,7 +1403,8 @@
           einem besseren Verständnis von KI und einem klareren Blick darauf, was sich später
           in Teams oder Organisationen skalieren lässt.
         </p>
-        <a href="#contact" class="lab-cta">Zur <span style="color:var(--red)">Self</span>.Ops-Reise <span class="arrow">→</span></a>
+        <a href="#contact" class="lab-cta"><span style="color:var(--red)">Self</span>.Ops-Erstgespräch anfragen <span class="arrow">→</span></a>
+        <p class="selfops-group">Auch als <strong>Gruppenformat für Führungsteams</strong> buchbar. Sprechen Sie mich an.</p>
       </div>
 
       <!-- Stufen-Visualisierung: Starttag → Fahrplan → 4 Wochen → BaseCamp -->
