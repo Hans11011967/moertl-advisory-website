@@ -881,6 +881,12 @@
       gap:14px 24px;
     }
     .think-visual{aspect-ratio:1/1;order:-1}
+
+    /* Hero: Branchenleiste in den normalen Fluss holen statt absolut am
+       unteren Rand — sonst ueberlappt sie auf schmalen Screens die Buttons. */
+    .hero{display:block;min-height:auto;padding-bottom:56px}
+    .hero-inner{max-width:none}
+    .hero-sectors{position:static;margin-top:44px}
   }
   @media (max-width: 920px){
     .brand img{height:88px}
