@@ -6,6 +6,10 @@
     "directory": "./",
     "binding": "ASSETS"
   },
+  "vars": {
+    "MAIL_FROM": "moertl advisory Kontakt <noreply@svr-jugend.org>",
+    "MAIL_TO": "hans@moertl-advisory.com"
+  },
   "d1_databases": [
     {
       "binding": "DB",
