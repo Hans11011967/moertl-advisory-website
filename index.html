@@ -13,260 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
-<style>
-  :root{
-    --bg:        #0D1B2A;   /* Deep Navy (Markenfarbe) */
-    --bg-2:      #102234;   /* etwas heller */
-    --bg-3:      #14283D;   /* Karten-Hover */
-    --line:      rgba(255,255,255,.10);
-    --line-soft: rgba(255,255,255,.055);
-    --white:     #FFFFFF;
-    --grey-1:    #C5D0DC;
-    --grey-2:    #8F9DAD;
-    --grey-3:    #93A3B4;   /* WCAG-AA auf Navy (>=4.5:1) */
-    --accent:    #FF8A00;   /* Orange (Markenfarbe) */
-    --accent-2:  #FF8A00;   /* nur noch Orange als Akzent */
-
-    --f-display: "Montserrat", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    --f-body:    "Montserrat", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-
-    --max:       1240px;
-    --gutter:    clamp(20px, 4vw, 56px);
-    --section-y: clamp(80px, 11vw, 150px);
-  }
-
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{
-    margin:0;background:var(--bg);color:var(--white);
-    font-family:var(--f-body);font-weight:400;font-size:17px;line-height:1.6;
-    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;
-  }
-  a{color:inherit;text-decoration:none}
-  img,svg{max-width:100%;display:block}
-  ::selection{background:var(--accent);color:var(--bg)}
-
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
-  .section{padding:var(--section-y) 0;position:relative}
-  .section + .section{border-top:1px solid var(--line-soft)}
-
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:14px;
-    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--grey-2);margin-bottom:26px;
-  }
-  .eyebrow::before{content:"";width:32px;height:1px;background:var(--accent)}
-
-  h2.h{
-    font-family:var(--f-display);font-weight:600;
-    font-size:clamp(32px,4.4vw,56px);line-height:1.12;letter-spacing:-.015em;
-    margin:0 0 24px;max-width:20ch;
-  }
-  h2.h em{color:var(--grey-1);font-weight:500;font-style:normal}
-  .dot{color:var(--accent)}
-  .o{color:var(--accent)}
-  [id]{scroll-margin-top:108px}
-  .lead{font-size:clamp(17px,1.4vw,19px);line-height:1.65;color:var(--grey-1);max-width:660px;font-weight:400}
-
-  /* ---------- Buttons ---------- */
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;
-    padding:15px 26px;font-family:var(--f-body);font-size:14.5px;font-weight:600;letter-spacing:.02em;
-    border:1px solid var(--line);background:transparent;color:var(--white);
-    cursor:pointer;transition:all .25s ease;
-  }
-  .btn:hover{border-color:var(--white);background:rgba(255,255,255,.04)}
-  .btn-primary{background:var(--accent);color:#0D1B2A;border-color:var(--accent);font-weight:600}
-  .btn-primary:hover{background:transparent;color:var(--accent)}
-  /* einheitlicher Stil fuer alle "Gespraech vereinbaren"-Buttons: Orange hervorgehoben */
-  .btn-talk{border-color:var(--accent);color:var(--accent);font-weight:600}
-  .btn-talk:hover{background:var(--accent);color:#0D1B2A;border-color:var(--accent)}
-  .btn .arrow{transition:transform .25s ease;display:inline-block}
-  .btn:hover .arrow{transform:translateX(4px)}
-
-  /* ---------- Nav ---------- */
-  .nav{
-    position:fixed;top:0;left:0;right:0;z-index:50;
-    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-    background:rgba(13,27,42,.72);border-bottom:1px solid var(--line-soft);
-    transition:padding .25s ease;
-  }
-  .nav-inner{
-    max-width:var(--max);margin:0 auto;padding:14px var(--gutter);
-    display:flex;align-items:center;justify-content:space-between;gap:24px;
-  }
-  .nav.scrolled .nav-inner{padding-top:10px;padding-bottom:10px}
-  .brand{display:inline-flex;align-items:center;line-height:0}
-  .brand img{height:92px;width:auto;transition:height .25s ease}
-  .nav.scrolled .brand img{height:70px}
-  .nav-links{display:flex;align-items:center;gap:22px;font-size:13.5px}
-  .nav-links a{position:relative;color:var(--grey-1);padding:6px 0;font-weight:500;transition:color .2s ease}
-  .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--accent);transition:right .3s ease}
-  .nav-links a:hover{color:var(--white)}
-  .nav-links a:hover::after{right:0}
-  .nav-links .btn{padding:11px 20px}
-  .nav-burger{display:none;background:none;border:0;color:var(--white);width:40px;height:40px;cursor:pointer;padding:0}
-  .nav-burger span{display:block;width:22px;height:1.5px;background:var(--white);margin:5px auto;transition:.25s}
-  .nav-overlay{
-    position:fixed;inset:0;background:var(--bg);z-index:49;padding:104px var(--gutter) 48px;
-    transform:translateY(-100%);transition:transform .35s cubic-bezier(.7,0,.2,1);
-    display:flex;flex-direction:column;justify-content:space-between;
-  }
-  .nav-overlay.open{transform:translateY(0)}
-  .nav-overlay nav{display:flex;flex-direction:column;gap:6px}
-  .nav-overlay nav a{font-family:var(--f-display);font-weight:600;font-size:clamp(28px,7vw,42px);letter-spacing:-.01em;padding:12px 0;border-bottom:1px solid var(--line-soft)}
-  .nav-overlay-foot{font-size:13px;color:var(--grey-2);display:flex;gap:20px;flex-wrap:wrap}
-
-  /* ---------- Hero ---------- */
-  .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:124px 0 64px}
-  .hero-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,72px);align-items:center;width:100%}
-  .hero-photo{
-    position:relative;border:1px solid var(--line-soft);background:var(--bg-2);
-    aspect-ratio:4/5;overflow:hidden;
-  }
-  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:38% center}
-  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(13,27,42,.55))}
-  .hero-eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey-2);margin-bottom:24px;display:flex;align-items:center;gap:14px}
-  .hero-eyebrow::before{content:"";width:38px;height:1px;background:var(--accent)}
-  .hero h1{
-    font-family:var(--f-display);font-weight:700;
-    font-size:clamp(38px,5.6vw,74px);line-height:1.05;letter-spacing:-.02em;margin:0 0 26px;
-  }
-  .hero h1 em{color:var(--grey-1);font-weight:600;font-style:normal}
-  .hero-sub{font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:var(--grey-1);font-weight:400;max-width:560px;margin:0 0 18px}
-  .hero-sub strong{color:var(--white);font-weight:500}
-  .hero-micro{font-size:13px;letter-spacing:.05em;color:var(--grey-3);text-transform:uppercase;margin:0 0 36px}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-
-  /* ---------- Problem ---------- */
-  .problem{background:var(--bg-2);text-align:center}
-  .problem .eyebrow{justify-content:center}
-  .problem-quote{
-    font-family:var(--f-display);font-weight:600;
-    font-size:clamp(25px,3.4vw,42px);line-height:1.3;color:var(--white);
-    max-width:20ch;margin:0 auto 28px;
-  }
-  .problem-quote .q{color:var(--accent)}
-  .problem-note{font-size:15px;letter-spacing:.04em;color:var(--grey-2)}
-  .problem-note span{color:var(--grey-3);margin:0 .5em}
-
-  /* ---------- Portfolio ---------- */
-  .port-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:8px}
-  .port-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-soft);margin-top:48px;border:1px solid var(--line-soft)}
-  .card{background:var(--bg);padding:clamp(28px,3vw,44px);display:flex;flex-direction:column;transition:background .3s ease}
-  .card:hover{background:var(--bg-3)}
-  .card-num{font-family:var(--f-display);font-weight:700;font-size:34px;color:var(--accent);line-height:1;margin-bottom:18px}
-  .card h3{font-family:var(--f-display);font-weight:600;font-size:26px;line-height:1.18;margin:0 0 6px;letter-spacing:-.01em}
-  .card-tag{font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--grey-1);margin-bottom:18px}
-  .card ul{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:10px}
-  .card li{position:relative;padding-left:20px;font-size:14.5px;line-height:1.5;color:var(--grey-1);font-weight:400}
-  .card li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--accent);opacity:.7}
-  .card-foot{margin-top:auto;padding-top:18px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;align-items:baseline;gap:14px}
-  .card-foot .price{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--white)}
-  .card-foot .zg{font-size:12.5px;color:var(--grey-3);line-height:1.4;text-align:right;max-width:60%}
-  .port-flow{
-    margin-top:40px;padding:24px 28px;border:1px solid var(--line-soft);background:var(--bg-2);
-    display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
-    font-family:var(--f-display);font-weight:500;font-size:clamp(17px,1.8vw,22px);color:var(--grey-1);text-align:center;
-  }
-  .port-flow b{color:var(--white);font-style:normal;font-family:var(--f-body);font-weight:500;font-size:.7em;letter-spacing:.02em}
-  .port-flow .ar{color:var(--accent)}
-  .port-os{margin-top:18px;text-align:center;font-size:13.5px;letter-spacing:.04em;color:var(--grey-3)}
-  .port-os b{color:var(--accent-2);font-weight:500}
-
-  /* ---------- Haltung (3 branches) ---------- */
-  .belief-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);margin-top:48px;border:1px solid var(--line-soft)}
-  .belief{background:var(--bg);padding:clamp(28px,3vw,40px);transition:background .3s ease}
-  .belief:hover{background:var(--bg-3)}
-  .belief .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey-3);margin-bottom:18px}
-  .belief h3{font-family:var(--f-display);font-weight:600;font-size:24px;line-height:1.2;margin:0 0 14px}
-  .belief p{font-size:14.5px;line-height:1.6;color:var(--grey-1);font-weight:400;margin:0 0 16px}
-  .belief a{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--white);border-bottom:1px solid var(--line);padding-bottom:4px;transition:border-color .25s ease}
-  .belief a:hover{border-color:var(--accent)}
-
-  /* ---------- Anders / Differenzierung ---------- */
-  .anders{background:var(--bg-2)}
-  .anders-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,80px);align-items:start}
-  .anders-list{display:grid;gap:0}
-  .anders-item{padding:22px 0;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline}
-  .anders-item:first-child{padding-top:0}
-  .anders-item:last-child{border-bottom:0}
-  .anders-item .n{font-family:var(--f-display);font-weight:700;color:var(--accent);font-size:19px}
-  .anders-item h4{margin:0 0 4px;font-size:17px;font-weight:500;color:var(--white)}
-  .anders-item p{margin:0;font-size:14.5px;line-height:1.55;color:var(--grey-1);font-weight:400}
-
-  /* ---------- Reise zur KI ---------- */
-  .ki-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
-  .ki-photo{border:1px solid var(--line-soft);background:var(--bg-2);aspect-ratio:3/2;overflow:hidden}
-  .ki-photo img{width:100%;height:100%;object-fit:cover}
-  .ki-body p{font-size:17px;line-height:1.7;color:var(--grey-1);font-weight:400;margin:0 0 20px}
-  .ki-body p em{font-weight:600;font-style:normal;color:var(--white)}
-
-  /* ---------- FAQ ---------- */
-  .faq{max-width:860px;margin:0 auto}
-  .faq details{border-bottom:1px solid var(--line-soft)}
-  .faq summary{
-    list-style:none;cursor:pointer;padding:24px 0;display:flex;justify-content:space-between;gap:20px;align-items:center;
-    font-size:clamp(17px,1.7vw,20px);color:var(--white);font-weight:400;
-  }
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary .pm{color:var(--accent);font-size:24px;line-height:1;transition:transform .3s ease;flex:0 0 auto}
-  .faq details[open] summary .pm{transform:rotate(45deg)}
-  .faq p{margin:0 0 24px;font-size:15.5px;line-height:1.65;color:var(--grey-1);font-weight:400;max-width:70ch}
-
-  /* ---------- Kontakt ---------- */
-  .contact{background:var(--bg-2)}
-  .contact-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,72px);align-items:center}
-  .contact-photo{border:1px solid var(--line-soft);background:var(--bg);aspect-ratio:1/1;overflow:hidden;max-width:420px}
-  .contact-photo img{width:100%;height:100%;object-fit:cover}
-  .contact h2{font-family:var(--f-display);font-weight:600;font-size:clamp(30px,4vw,50px);line-height:1.12;letter-spacing:-.015em;margin:0 0 20px}
-  .contact h2 em{font-style:normal;color:var(--accent)}
-  .contact-personal{font-family:var(--f-display);font-style:italic;font-weight:500;font-size:clamp(18px,1.9vw,23px);color:var(--accent);line-height:1.45;margin:0 0 32px}
-  .contact-row{display:flex;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--line-soft)}
-  .contact-row:last-of-type{border-bottom:0}
-  .contact-row .label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-3);flex:0 0 92px}
-  .contact-row .val{font-size:16.5px;color:var(--white)}
-  .contact-row .val a{border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .25s ease}
-  .contact-row .val a:hover{border-color:var(--accent)}
-  .contact-cta{margin-top:30px}
-
-  /* ---------- Footer ---------- */
-  footer{padding:40px 0 32px;border-top:1px solid var(--line-soft)}
-  .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--grey-3)}
-  .foot-inner a{color:var(--grey-2)}
-  .foot-inner a:hover{color:var(--white)}
-  .foot-links{display:flex;gap:22px}
-
-  /* ---------- Reveal ---------- */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
-  .reveal.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-
-  /* ---------- Responsive ---------- */
-  /* mehr/laengere Nav-Punkte -> Burger schon ab 1100px */
-  @media (max-width:1100px){
-    .nav-links{display:none}
-    .nav-burger{display:block}
-  }
-  @media (max-width:920px){
-    .nav-links{display:none}
-    .nav-burger{display:block}
-    .hero{min-height:auto;padding-top:108px}
-    .hero-grid,.anders-grid,.ki-grid,.contact-grid{grid-template-columns:1fr}
-    .hero-photo{max-width:440px;order:-1}
-    .ki-photo{order:-1}
-    .port-grid,.belief-grid{grid-template-columns:1fr}
-    .contact-photo{max-width:320px}
-  }
-  @media (max-width:540px){
-    .card-foot{flex-direction:column;gap:8px}
-    .card-foot .zg{text-align:left;max-width:none}
-    .port-flow{flex-direction:column;gap:10px}
-    .anders-item{grid-template-columns:1fr;gap:6px}
-    .contact-row{flex-direction:column;gap:4px}
-    .contact-row .label{flex-basis:auto}
-  }
-</style>
+<link rel="stylesheet" href="assets/v2/site.css">
 </head>
 <body>
 
@@ -276,9 +23,9 @@
     <a href="#top" class="brand" aria-label="moertl advisory — Startseite"><img src="assets/v2/logo-moertl.png" alt="moertl advisory"></a>
     <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
-      <a href="#glaube">Was ich glaube</a>
-      <a href="#arbeite">Woran ich gerade arbeite</a>
-      <a href="#berate">Warum ich heute berate</a>
+      <a href="glaube.html">Was ich glaube</a>
+      <a href="arbeite.html">Woran ich gerade arbeite</a>
+      <a href="berate.html">Warum ich heute berate</a>
       <a href="#faq">FAQ</a>
       <a href="#kontakt" class="btn btn-talk">Gespräch vereinbaren</a>
     </nav>
@@ -289,9 +36,9 @@
 <div class="nav-overlay" id="overlay" aria-hidden="true">
   <nav aria-label="Mobile Navigation">
     <a href="#leistungen">Leistungen</a>
-    <a href="#glaube">Was ich glaube</a>
-    <a href="#arbeite">Woran ich gerade arbeite</a>
-    <a href="#berate">Warum ich heute berate</a>
+    <a href="glaube.html">Was ich glaube</a>
+    <a href="arbeite.html">Woran ich gerade arbeite</a>
+    <a href="berate.html">Warum ich heute berate</a>
     <a href="#faq">FAQ</a>
     <a href="#kontakt">Gespräch vereinbaren</a>
   </nav>
@@ -361,6 +108,7 @@
           <span class="price">Festpreis · Programm</span>
           <span class="zg">Vorstand, AR-Mitglied (1:1) · Führungsteam, Gremium (Team)</span>
         </div>
+        <a class="card-more" href="leistung-01.html">Mehr erfahren <span class="arrow">→</span></a>
       </article>
 
       <article class="card">
@@ -376,6 +124,7 @@
           <span class="price">Festpreis · Fixed Scope</span>
           <span class="zg">Vorstände ohne klare KI-Governance · Institute nach aufsichtlichem Feedback</span>
         </div>
+        <a class="card-more" href="leistung-02.html">Mehr erfahren <span class="arrow">→</span></a>
       </article>
 
       <article class="card">
@@ -391,6 +140,7 @@
           <span class="price">Retainer · 12 Monate</span>
           <span class="zg">CEO, CIO, COO, CDO — insbesondere auch regulierte Institute</span>
         </div>
+        <a class="card-more" href="leistung-03.html">Mehr erfahren <span class="arrow">→</span></a>
       </article>
 
       <article class="card">
@@ -406,6 +156,7 @@
           <span class="price">Tagessatz · ab 6 Monate</span>
           <span class="zg">insbesondere auch regulierte Institute in Transformations- oder Krisenphase</span>
         </div>
+        <a class="card-more" href="leistung-04.html">Mehr erfahren <span class="arrow">→</span></a>
       </article>
     </div>
 
@@ -430,19 +181,19 @@
         <div class="k">01</div>
         <h3>Was ich glaube</h3>
         <p>Die Zukunft gehört nicht den Organisationen mit der besten Technologie, sondern denen, die am schnellsten lernen und Veränderung wirksam umsetzen.</p>
-        <a href="#kontakt">Mehr dazu <span>→</span></a>
+        <a href="glaube.html">Weiterlesen <span>→</span></a>
       </div>
       <div class="belief" id="arbeite">
         <div class="k">02</div>
         <h3>Woran ich gerade arbeite</h3>
         <p>An meiner eigenen Lernarchitektur — Self<span class="o">.</span>Ops, Team<span class="o">.</span>Ops, Enterprise<span class="o">.</span>Ops — und daran, KI im realen Führungsalltag erfahrbar zu machen, statt im Seminarraum.</p>
-        <a href="#ki-reise">Reise zur KI <span>→</span></a>
+        <a href="arbeite.html">Weiterlesen <span>→</span></a>
       </div>
       <div class="belief" id="berate">
         <div class="k">03</div>
         <h3>Warum ich heute berate</h3>
         <p>Weil ich diese Transformationen selbst verantwortet habe — in regulierten Strukturen, mit echter Konsequenz. Diese Erfahrung gebe ich weiter, auf Augenhöhe.</p>
-        <a href="#kontakt">Über mich <span>→</span></a>
+        <a href="berate.html">Meine Stationen <span>→</span></a>
       </div>
     </div>
   </div>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Interim Mandat | moertl advisory</title>
+<meta name="theme-color" content="#0D1B2A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/v2/site.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="moertl advisory — Startseite"><img src="assets/v2/logo-moertl.png" alt="moertl advisory"></a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="index.html#leistungen">Leistungen</a>
+      <a href="glaube.html">Was ich glaube</a>
+      <a href="arbeite.html">Woran ich gerade arbeite</a>
+      <a href="berate.html">Warum ich heute berate</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#kontakt" class="btn btn-talk">Gespräch vereinbaren</a>
+    </nav>
+    <button class="nav-burger" id="burger" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="nav-overlay" id="overlay" aria-hidden="true">
+  <nav aria-label="Mobile Navigation">
+    <a href="index.html#leistungen">Leistungen</a>
+    <a href="glaube.html">Was ich glaube</a>
+    <a href="arbeite.html">Woran ich gerade arbeite</a>
+    <a href="berate.html">Warum ich heute berate</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#kontakt">Gespräch vereinbaren</a>
+  </nav>
+  <div class="nav-overlay-foot"><span>hans@moertl-advisory.com</span><span>+49 151 506 517 23</span></div>
+</div>
+
+<section class="section subhero">
+  <div class="wrap">
+    <div class="backbar" style="padding-top:0;margin-bottom:26px"><a class="back-link" href="index.html#leistungen">← Zurück zu den Leistungen</a></div>
+    <span class="eyebrow">Angebot 04 · Interim Mandat</span>
+    <h2 class="h">Operative Führungsverantwortung <em>auf Zeit</em><span class="dot">.</span></h2>
+
+    <ul class="card-list-page" style="list-style:none;padding:0;margin:32px 0 0;max-width:760px;display:grid;gap:14px">
+      <li style="padding-left:20px;position:relative;color:var(--grey-1);line-height:1.6"><span style="position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--accent)"></span>CIO / COO / CDO bei Vakanzen, Krisen, Transformationsprogrammen.</li>
+      <li style="padding-left:20px;position:relative;color:var(--grey-1);line-height:1.6"><span style="position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--accent)"></span>Bridging: Vorstand ↔ IT/Operations ↔ Regulierung.</li>
+      <li style="padding-left:20px;position:relative;color:var(--grey-1);line-height:1.6"><span style="position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--accent)"></span>NORD/LB €196M · MB Bank BaFin §44 · Daimler FS €440M. Empfehlung über Netzwerk.</li>
+    </ul>
+    <p style="margin-top:22px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--white)">Tagessatz · ab 6 Monate</p>
+
+    <div class="placeholder">
+      <div class="tag">Noch zu detaillieren</div>
+      <p><strong>TEXT TEXT TEXT …</strong><br><br>Diese Angebotsseite wird noch ausgearbeitet — Ablauf, Ergebnisse, Beispiele und Rahmen. (Platzhalter, analog zu 02–04.)</p>
+    </div>
+
+    <div class="page-actions">
+      <a class="btn btn-talk" href="index.html#kontakt">Gespräch vereinbaren <span class="arrow">→</span></a>
+      <a class="back-link" href="index.html#leistungen">← Zurück</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© 2026 moertl transformation advisory</div>
+    <div class="foot-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+  </div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  const onScroll=()=>{nav.classList.toggle('scrolled',window.scrollY>12)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  const burger=document.getElementById('burger'),overlay=document.getElementById('overlay');
+  burger.addEventListener('click',()=>{const o=overlay.classList.toggle('open');overlay.setAttribute('aria-hidden',o?'false':'true');burger.setAttribute('aria-expanded',o?'true':'false');document.body.style.overflow=o?'hidden':''});
+  overlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{overlay.classList.remove('open');document.body.style.overflow=''}));
+</script>
+</body>
+</html>
