@@ -99,7 +99,7 @@
   }
   .nav-overlay.open{transform:translateY(0)}
   .nav-overlay nav{display:flex;flex-direction:column;gap:6px}
-  .nav-overlay nav a{font-family:var(--f-display);font-weight:600;font-size:clamp(28px,7vw,42px);letter-spacing:-.01em;padding:12px 0;border-bottom:1px solid var(--line-soft)}
+  .nav-overlay nav a{font-family:var(--f-display);font-weight:500;font-size:clamp(18px,5vw,22px);letter-spacing:-.005em;padding:14px 0;border-bottom:1px solid var(--line-soft)}
   .nav-overlay-foot{font-size:13px;color:var(--grey-2);display:flex;gap:20px;flex-wrap:wrap}
 
   /* ---------- Hero ---------- */
