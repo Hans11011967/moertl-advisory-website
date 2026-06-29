@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Platzhalter KI-Motiv">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16181c"/>
+      <stop offset="100%" stop-color="#0a0b0d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#g2)"/>
+  <g stroke="#2f323a" stroke-width="1.5" fill="none">
+    <circle cx="820" cy="300" r="120"/>
+    <circle cx="820" cy="300" r="70"/>
+    <line x1="380" y1="300" x2="700" y2="300"/>
+    <circle cx="380" cy="300" r="90"/>
+  </g>
+  <circle cx="820" cy="300" r="10" fill="#3aa68a"/>
+  <text x="600" y="600" text-anchor="middle" fill="#6b6f78" font-family="Geist, Inter, sans-serif" font-size="24" letter-spacing="2">Foto: Reise zur KI (Mensch &amp; Maschine)</text>
+  <text x="600" y="636" text-anchor="middle" fill="#4c4f57" font-family="Geist, Inter, sans-serif" font-size="16" letter-spacing="1">assets/v2/hans-ai.jpg</text>
+</svg>
