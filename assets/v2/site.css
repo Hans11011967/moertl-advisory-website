@@ -331,3 +331,13 @@
   /* Zwischenueberschriften im Fliesstext (Unterseiten) */
   .prose h3{font-family:var(--f-display);font-weight:600;font-size:21px;line-height:1.25;letter-spacing:-.01em;color:var(--white);margin:38px 0 12px}
   .prose h3:first-child{margin-top:0}
+
+  /* ===== Kontaktformular: Honeypot, Einwilligung, Status ===== */
+  .cf-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none}
+  .cform .cf-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:var(--grey-2);cursor:pointer;text-transform:none;letter-spacing:0;font-weight:400;margin:2px 0 0}
+  .cform .cf-consent input{width:auto;flex:0 0 auto;margin-top:3px;padding:0;accent-color:var(--accent)}
+  .cform .cf-consent a{color:var(--grey-1);border-bottom:1px solid var(--line)}
+  .cform .cf-consent a:hover{border-color:var(--accent)}
+  .cf-status{margin:4px 0 0;font-size:14.5px;line-height:1.5;padding:14px 16px;border-radius:2px}
+  .cf-status.ok{color:#cdeede;background:rgba(58,166,138,.12);border:1px solid rgba(58,166,138,.45)}
+  .cf-status.err{color:#ffd9bf;background:rgba(255,138,0,.10);border:1px solid rgba(255,138,0,.5)}

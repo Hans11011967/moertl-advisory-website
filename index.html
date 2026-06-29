@@ -278,8 +278,11 @@
             <label for="cf-anliegen">Worum geht es?</label>
             <textarea id="cf-anliegen" name="anliegen" placeholder="Was beschäftigt Sie gerade? Sie müssen noch nicht wissen, was genau fehlt." required></textarea>
           </div>
-          <button class="btn btn-primary" type="submit">Gespräch vereinbaren <span class="arrow">→</span></button>
-          <p class="hint">Mit dem Absenden öffnet sich Ihr E-Mail-Programm mit einer vorbereiteten Nachricht an hans@moertl-advisory.com — es werden keine Formulardaten auf dem Server gespeichert. Kein Pitch, keine Verpflichtung. <a href="datenschutz.html" style="color:var(--grey-1);border-bottom:1px solid var(--line)">Datenschutz</a></p>
+          <input class="cf-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="cf-consent"><input type="checkbox" id="cf-consent" required> Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert und verarbeitet werden. Hinweise dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</label>
+          <button class="btn btn-primary" id="cf-submit" type="submit">Gespräch vereinbaren <span class="arrow">→</span></button>
+          <p class="cf-status" id="cf-status" role="status" hidden></p>
+          <p class="hint">Kein Pitch, keine Verpflichtung. Ihre Anfrage wird über meine eigene Infrastruktur (Cloudflare, EU) verarbeitet — keine Weitergabe an Werbenetzwerke.</p>
         </form>
         <div class="contact-alt">
           <span>Oder direkt:</span>
@@ -315,23 +318,39 @@
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // Kontaktformular: baut eine vorbereitete E-Mail an hans@moertl-advisory.com
-  // (Vorschlag ohne Backend — fuer echtes serverseitiges Versenden spaeter Worker/Formspree)
+  // Kontaktformular: sendet an den eigenen Worker-Endpunkt /api/contact,
+  // speichert in D1 und zeigt eine Empfangsbestätigung.
   const cf=document.getElementById('contactForm');
-  if(cf){cf.addEventListener('submit',e=>{
-    e.preventDefault();
-    const v=id=>(cf.querySelector('#'+id)?.value||'').trim();
-    if(!v('cf-name')||!v('cf-email')||!v('cf-anliegen')){alert('Bitte Name, E-Mail und Ihr Anliegen ausfüllen.');return;}
-    const body=
-      'Name: '+v('cf-name')+'\n'+
-      'E-Mail: '+v('cf-email')+'\n'+
-      'Rolle: '+(v('cf-rolle')||'—')+'\n'+
-      'Aufmerksam geworden über: '+(v('cf-quelle')||'—')+'\n\n'+
-      'Anliegen:\n'+v('cf-anliegen')+'\n';
-    window.location.href='mailto:hans@moertl-advisory.com'+
-      '?subject='+encodeURIComponent('Gespräch vereinbaren — '+v('cf-name'))+
-      '&body='+encodeURIComponent(body);
-  });}
+  if(cf){
+    const status=document.getElementById('cf-status');
+    const btn=document.getElementById('cf-submit');
+    const val=id=>(cf.querySelector('#'+id)?.value||'').trim();
+    const show=(msg,ok)=>{status.hidden=false;status.textContent=msg;status.className='cf-status '+(ok?'ok':'err');};
+    cf.addEventListener('submit',async e=>{
+      e.preventDefault();
+      if(!val('cf-name')||!val('cf-email')||!val('cf-anliegen')){show('Bitte Name, E-Mail und Ihr Anliegen ausfüllen.',false);return;}
+      if(!cf.querySelector('#cf-consent').checked){show('Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu.',false);return;}
+      const orig=btn.innerHTML; btn.disabled=true; btn.textContent='Wird gesendet…'; status.hidden=true;
+      try{
+        const r=await fetch('/api/contact',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({
+          name:val('cf-name'),email:val('cf-email'),rolle:val('cf-rolle'),quelle:val('cf-quelle'),
+          anliegen:val('cf-anliegen'),consent:cf.querySelector('#cf-consent').checked,
+          website:cf.querySelector('.cf-hp')?.value||''
+        })});
+        const d=await r.json().catch(()=>({}));
+        if(r.ok && d.ok){
+          [...cf.children].forEach(el=>{ if(el.id!=='cf-status') el.style.display='none'; });
+          show('Ihre Kontaktanfrage wurde empfangen. Ich melde mich persönlich bei Ihnen.',true);
+        } else {
+          show((d&&d.error)||'Es ist ein Fehler aufgetreten. Bitte später erneut versuchen oder direkt an hans@moertl-advisory.com schreiben.',false);
+          btn.disabled=false; btn.innerHTML=orig;
+        }
+      }catch(_){
+        show('Verbindung fehlgeschlagen. Bitte später erneut versuchen oder direkt an hans@moertl-advisory.com schreiben.',false);
+        btn.disabled=false; btn.innerHTML=orig;
+      }
+    });
+  }
 </script>
 
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "157723c7617a4c63b42c4258c04b9618"}'></script><!-- End Cloudflare Web Analytics -->

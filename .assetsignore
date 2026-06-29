@@ -6,3 +6,7 @@ wrangler.toml
 .assetsignore
 README.md
 node_modules
+worker.js
+package.json
+package-lock.json
+schema.sql

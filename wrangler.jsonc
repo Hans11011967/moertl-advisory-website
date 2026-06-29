@@ -1,7 +1,16 @@
 {
   "name": "moertl-advisory-website",
   "compatibility_date": "2026-05-19",
+  "main": "worker.js",
   "assets": {
-    "directory": "./"
-  }
+    "directory": "./",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "moertl-contacts",
+      "database_id": "ef3b7938-93f0-4770-b9be-fbb0ca9e64cf"
+    }
+  ]
 }
