@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>moertl advisory — KI-Governance & Transformation für Vorstände und Aufsichtsräte</title>
 <meta name="description" content="Hans Mörtl: KI-Governance, Transformation und Orientierung für Vorstände und Aufsichtsräte EZB-regulierter Institute. AI Leadership Journey, Transformation Diagnostic, Advisory Retainer, Interim Mandat.">
-<meta name="theme-color" content="#0d0e10">
+<meta name="theme-color" content="#0D1B2A">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,17 +15,17 @@
 
 <style>
   :root{
-    --bg:        #0d0e10;
-    --bg-2:      #131417;
-    --bg-3:      #181a1e;
+    --bg:        #0D1B2A;   /* Deep Navy (Markenfarbe) */
+    --bg-2:      #102234;   /* etwas heller */
+    --bg-3:      #14283D;   /* Karten-Hover */
     --line:      rgba(255,255,255,.10);
     --line-soft: rgba(255,255,255,.055);
-    --white:     #F4F3F1;
-    --grey-1:    #C3C5C9;
-    --grey-2:    #8C8F96;
-    --grey-3:    #7A7E87;   /* auf WCAG-AA angehoben (>=4.5:1) */
-    --accent:    #C98A4B;   /* warmes Kupfer */
-    --accent-2:  #3AA68A;   /* gedämpftes Teal als Sekundärakzent */
+    --white:     #FFFFFF;
+    --grey-1:    #C5D0DC;
+    --grey-2:    #8F9DAD;
+    --grey-3:    #93A3B4;   /* WCAG-AA auf Navy (>=4.5:1) */
+    --accent:    #FF8A00;   /* Orange (Markenfarbe) */
+    --accent-2:  #FF8A00;   /* nur noch Orange als Akzent */
 
     --f-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
     --f-body:    "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
@@ -74,7 +74,7 @@
     cursor:pointer;transition:all .25s ease;
   }
   .btn:hover{border-color:var(--white);background:rgba(255,255,255,.04)}
-  .btn-primary{background:var(--accent);color:#1a1206;border-color:var(--accent);font-weight:500}
+  .btn-primary{background:var(--accent);color:#0D1B2A;border-color:var(--accent);font-weight:600}
   .btn-primary:hover{background:transparent;color:var(--accent)}
   .btn .arrow{transition:transform .25s ease;display:inline-block}
   .btn:hover .arrow{transform:translateX(4px)}
@@ -83,7 +83,7 @@
   .nav{
     position:fixed;top:0;left:0;right:0;z-index:50;
     backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-    background:rgba(13,14,16,.72);border-bottom:1px solid var(--line-soft);
+    background:rgba(13,27,42,.72);border-bottom:1px solid var(--line-soft);
     transition:padding .25s ease;
   }
   .nav-inner{
@@ -92,8 +92,8 @@
   }
   .nav.scrolled .nav-inner{padding-top:10px;padding-bottom:10px}
   .brand{display:inline-flex;align-items:center;line-height:0}
-  .brand img{height:62px;width:auto;transition:height .25s ease}
-  .nav.scrolled .brand img{height:50px}
+  .brand img{height:92px;width:auto;transition:height .25s ease}
+  .nav.scrolled .brand img{height:70px}
   .nav-links{display:flex;align-items:center;gap:30px;font-size:14.5px}
   .nav-links a{position:relative;color:var(--grey-1);padding:6px 0;transition:color .2s ease}
   .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--accent);transition:right .3s ease}
@@ -120,7 +120,7 @@
     aspect-ratio:4/5;overflow:hidden;
   }
   .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:38% center}
-  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(13,14,16,.55))}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(13,27,42,.55))}
   .hero-eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey-2);margin-bottom:24px;display:flex;align-items:center;gap:14px}
   .hero-eyebrow::before{content:"";width:38px;height:1px;background:var(--accent)}
   .hero h1{
@@ -152,7 +152,7 @@
   .card:hover{background:var(--bg-3)}
   .card-num{font-family:var(--f-display);font-style:italic;font-size:34px;color:var(--accent);line-height:1;margin-bottom:18px}
   .card h3{font-family:var(--f-display);font-weight:400;font-size:27px;line-height:1.15;margin:0 0 6px;letter-spacing:-.01em}
-  .card-tag{font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-2);margin-bottom:18px}
+  .card-tag{font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--grey-1);margin-bottom:18px}
   .card ul{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:10px}
   .card li{position:relative;padding-left:20px;font-size:14.5px;line-height:1.5;color:var(--grey-1);font-weight:300}
   .card li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--accent);opacity:.7}
@@ -262,7 +262,7 @@
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#top" class="brand" aria-label="moertl advisory — Startseite"><img src="assets/moertl-advisory-logo.png" alt="moertl advisory"></a>
+    <a href="#top" class="brand" aria-label="moertl advisory — Startseite"><img src="assets/v2/logo-moertl.png" alt="moertl advisory"></a>
     <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
       <a href="#haltung">Haltung</a>
