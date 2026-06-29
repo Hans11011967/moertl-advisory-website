@@ -268,11 +268,27 @@
         <span class="eyebrow">Kontakt</span>
         <h2>Starten Sie Ihre <em>Journey</em><span class="dot">.</span></h2>
         <p class="contact-personal">„Ich freue mich auf das Gespräch — und auf das, was ich von Ihnen lerne und wir zusammen bewegen können."</p>
-        <div class="contact-row"><span class="label">E-Mail</span><span class="val"><a href="mailto:hans@moertl-advisory.com?subject=Gespr%C3%A4ch%20vereinbaren">hans@moertl-advisory.com</a></span></div>
-        <div class="contact-row"><span class="label">LinkedIn</span><span class="val"><a href="https://www.linkedin.com/in/hans-moertl/" target="_blank" rel="noopener">linkedin.com/in/hans-moertl</a></span></div>
-        <div class="contact-row"><span class="label">Telefon</span><span class="val"><a href="tel:+4915150651723">+49 151 506 517 23</a></span></div>
-        <div class="contact-cta">
-          <a class="btn btn-primary" href="mailto:hans@moertl-advisory.com?subject=Erstgespr%C3%A4ch">Erstgespräch anfragen <span class="arrow">→</span></a>
+        <form class="cform" id="contactForm" novalidate>
+          <div class="row2">
+            <div><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" autocomplete="name" required></div>
+            <div><label for="cf-email">E-Mail</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="row2">
+            <div><label for="cf-rolle">Ihre Rolle</label><input id="cf-rolle" name="rolle" type="text" placeholder="z. B. Vorstand, Aufsichtsrat, CIO"></div>
+            <div><label for="cf-quelle">Wie sind Sie auf mich aufmerksam geworden?</label><input id="cf-quelle" name="quelle" type="text" placeholder="LinkedIn, Empfehlung, …"></div>
+          </div>
+          <div>
+            <label for="cf-anliegen">Worum geht es?</label>
+            <textarea id="cf-anliegen" name="anliegen" placeholder="Was beschäftigt Sie gerade? Sie müssen noch nicht wissen, was genau fehlt." required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Gespräch vereinbaren <span class="arrow">→</span></button>
+          <p class="hint">Mit dem Absenden öffnet sich Ihr E-Mail-Programm mit einer vorbereiteten Nachricht an hans@moertl-advisory.com. Kein Pitch, keine Verpflichtung.</p>
+        </form>
+        <div class="contact-alt">
+          <span>Oder direkt:</span>
+          <a href="mailto:hans@moertl-advisory.com?subject=Gespr%C3%A4ch%20vereinbaren">hans@moertl-advisory.com</a>
+          <a href="https://www.linkedin.com/in/hans-moertl/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="tel:+4915150651723">+49 151 506 517 23</a>
         </div>
       </div>
     </div>
@@ -301,6 +317,24 @@
 
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Kontaktformular: baut eine vorbereitete E-Mail an hans@moertl-advisory.com
+  // (Vorschlag ohne Backend — fuer echtes serverseitiges Versenden spaeter Worker/Formspree)
+  const cf=document.getElementById('contactForm');
+  if(cf){cf.addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>(cf.querySelector('#'+id)?.value||'').trim();
+    if(!v('cf-name')||!v('cf-email')||!v('cf-anliegen')){alert('Bitte Name, E-Mail und Ihr Anliegen ausfüllen.');return;}
+    const body=
+      'Name: '+v('cf-name')+'\n'+
+      'E-Mail: '+v('cf-email')+'\n'+
+      'Rolle: '+(v('cf-rolle')||'—')+'\n'+
+      'Aufmerksam geworden über: '+(v('cf-quelle')||'—')+'\n\n'+
+      'Anliegen:\n'+v('cf-anliegen')+'\n';
+    window.location.href='mailto:hans@moertl-advisory.com'+
+      '?subject='+encodeURIComponent('Gespräch vereinbaren — '+v('cf-name'))+
+      '&body='+encodeURIComponent(body);
+  });}
 </script>
 
 </body>

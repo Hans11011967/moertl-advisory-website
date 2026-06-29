@@ -297,3 +297,33 @@
     .vita,.vita-more{grid-template-columns:1fr}
     .subhero{padding-top:122px}
   }
+
+  /* ===== Heading eine Stufe kleiner (Unterseiten) ===== */
+  .h.h-sm{font-size:clamp(25px,3.2vw,40px);line-height:1.16}
+
+  /* ===== Architekturdenken-Block (Bild + Text) ===== */
+  .think-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center;margin-top:28px}
+  .think-photo{border:1px solid var(--line-soft);background:var(--bg-2);overflow:hidden;aspect-ratio:4/3}
+  .think-photo img{width:100%;height:100%;object-fit:cover}
+  .prose a{color:var(--white);border-bottom:1.5px solid var(--accent);padding-bottom:1px;transition:color .2s ease}
+  .prose a:hover{color:var(--accent)}
+  @media (max-width:920px){ .think-grid{grid-template-columns:1fr} .think-photo{order:-1;max-width:520px} }
+
+  /* ===== Kontaktformular ===== */
+  .cform{display:grid;gap:16px;max-width:560px;margin-top:8px}
+  .cform .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .cform label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-2);margin-bottom:7px}
+  .cform input,.cform select,.cform textarea{
+    width:100%;background:var(--bg);color:var(--white);
+    border:1px solid var(--line);border-radius:2px;
+    padding:13px 14px;font-family:var(--f-body);font-size:15px;
+    transition:border-color .2s ease;
+  }
+  .cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--accent)}
+  .cform textarea{min-height:120px;resize:vertical}
+  .cform .hint{font-size:12.5px;color:var(--grey-3);margin-top:4px}
+  .cform button{justify-content:center;margin-top:4px}
+  .contact-alt{margin-top:26px;display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--grey-2)}
+  .contact-alt a{color:var(--grey-1);border-bottom:1px solid var(--line);padding-bottom:2px}
+  .contact-alt a:hover{border-color:var(--accent)}
+  @media (max-width:540px){ .cform .row2{grid-template-columns:1fr} }
