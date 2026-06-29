@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>moertl advisory — KI-Governance & Transformation für Vorstände und Aufsichtsräte</title>
-<meta name="description" content="Hans Mörtl: KI-Governance, Transformation und Orientierung für Vorstände und Aufsichtsräte EZB-regulierter Institute. AI Leadership Journey, Transformation Diagnostic, Advisory Retainer, Interim Mandat.">
+<meta name="description" content="Hans Mörtl: KI-Governance, Transformation und Orientierung für Vorstände, Aufsichtsräte, C-Level-Entscheider und Multiplikatoren — insbesondere auch in regulierten Instituten. AI Leadership Journey, Transformation Diagnostic, Advisory Retainer, Interim Mandat.">
 <meta name="theme-color" content="#0D1B2A">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,6 +64,8 @@
   }
   h2.h em{color:var(--grey-1);font-weight:500;font-style:normal}
   .dot{color:var(--accent)}
+  .o{color:var(--accent)}
+  [id]{scroll-margin-top:108px}
   .lead{font-size:clamp(17px,1.4vw,19px);line-height:1.65;color:var(--grey-1);max-width:660px;font-weight:400}
 
   /* ---------- Buttons ---------- */
@@ -76,6 +78,9 @@
   .btn:hover{border-color:var(--white);background:rgba(255,255,255,.04)}
   .btn-primary{background:var(--accent);color:#0D1B2A;border-color:var(--accent);font-weight:600}
   .btn-primary:hover{background:transparent;color:var(--accent)}
+  /* einheitlicher Stil fuer alle "Gespraech vereinbaren"-Buttons: Orange hervorgehoben */
+  .btn-talk{border-color:var(--accent);color:var(--accent);font-weight:600}
+  .btn-talk:hover{background:var(--accent);color:#0D1B2A;border-color:var(--accent)}
   .btn .arrow{transition:transform .25s ease;display:inline-block}
   .btn:hover .arrow{transform:translateX(4px)}
 
@@ -94,7 +99,7 @@
   .brand{display:inline-flex;align-items:center;line-height:0}
   .brand img{height:92px;width:auto;transition:height .25s ease}
   .nav.scrolled .brand img{height:70px}
-  .nav-links{display:flex;align-items:center;gap:30px;font-size:14.5px}
+  .nav-links{display:flex;align-items:center;gap:22px;font-size:13.5px}
   .nav-links a{position:relative;color:var(--grey-1);padding:6px 0;font-weight:500;transition:color .2s ease}
   .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--accent);transition:right .3s ease}
   .nav-links a:hover{color:var(--white)}
@@ -238,6 +243,11 @@
   @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 
   /* ---------- Responsive ---------- */
+  /* mehr/laengere Nav-Punkte -> Burger schon ab 1100px */
+  @media (max-width:1100px){
+    .nav-links{display:none}
+    .nav-burger{display:block}
+  }
   @media (max-width:920px){
     .nav-links{display:none}
     .nav-burger{display:block}
@@ -266,10 +276,11 @@
     <a href="#top" class="brand" aria-label="moertl advisory — Startseite"><img src="assets/v2/logo-moertl.png" alt="moertl advisory"></a>
     <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
-      <a href="#haltung">Haltung</a>
-      <a href="#ki-reise">Reise zur KI</a>
+      <a href="#glaube">Was ich glaube</a>
+      <a href="#arbeite">Woran ich gerade arbeite</a>
+      <a href="#berate">Warum ich heute berate</a>
       <a href="#faq">FAQ</a>
-      <a href="#kontakt" class="btn">Gespräch vereinbaren</a>
+      <a href="#kontakt" class="btn btn-talk">Gespräch vereinbaren</a>
     </nav>
     <button class="nav-burger" id="burger" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -278,8 +289,9 @@
 <div class="nav-overlay" id="overlay" aria-hidden="true">
   <nav aria-label="Mobile Navigation">
     <a href="#leistungen">Leistungen</a>
-    <a href="#haltung">Haltung</a>
-    <a href="#ki-reise">Reise zur KI</a>
+    <a href="#glaube">Was ich glaube</a>
+    <a href="#arbeite">Woran ich gerade arbeite</a>
+    <a href="#berate">Warum ich heute berate</a>
     <a href="#faq">FAQ</a>
     <a href="#kontakt">Gespräch vereinbaren</a>
   </nav>
@@ -296,7 +308,7 @@
         <img src="assets/v2/hans-hero.jpg" alt="Hans Mörtl">
       </div>
       <div class="hero-text reveal">
-        <div class="hero-eyebrow">KI-Governance &amp; Transformation · Vorstände &amp; Aufsichtsräte</div>
+        <div class="hero-eyebrow">KI-Governance &amp; Transformation · Vorstände · Aufsichtsräte · C-Level · Multiplikatoren</div>
         <h1>Was hält Sie<br><em>nachts wach?</em><span class="dot">.</span></h1>
         <p class="hero-sub">
           KI, Regulierung und Transformation bewegen sich schneller, als Governance und
@@ -306,7 +318,7 @@
         <p class="hero-micro">Kein Pitch · Keine Verpflichtung</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#leistungen">Start your Journey <span class="arrow">→</span></a>
-          <a class="btn" href="#kontakt">Gespräch vereinbaren</a>
+          <a class="btn btn-talk" href="#kontakt">Gespräch vereinbaren</a>
         </div>
       </div>
     </div>
@@ -333,14 +345,14 @@
         <span class="eyebrow">Produktportfolio</span>
         <h2 class="h">Vier Wege der <em>Zusammenarbeit</em><span class="dot">.</span></h2>
       </div>
-      <p class="lead" style="max-width:420px">KI-Governance &amp; Transformation für Vorstände und Aufsichtsräte EZB-regulierter Institute. Vom ersten Verstehen bis zur operativen Umsetzung.</p>
+      <p class="lead" style="max-width:420px">KI-Governance &amp; Transformation für Vorstände, Aufsichtsräte, C-Level-Entscheider und Multiplikatoren — insbesondere auch in regulierten Instituten. Vom ersten Verstehen bis zur operativen Umsetzung.</p>
     </div>
 
     <div class="port-grid reveal">
       <article class="card">
         <div class="card-num">01</div>
         <h3>AI Leadership Journey</h3>
-        <div class="card-tag">Die Lernreise für Führungskräfte · Self.OS · Team.OS · Enterprise.OS</div>
+        <div class="card-tag">Die Lernreise für Führungskräfte · Self<span class="o">.</span>Ops · Team<span class="o">.</span>Ops · Enterprise<span class="o">.</span>Ops</div>
         <ul>
           <li><strong>Format A · 1:1 Intensiv</strong> — Vorstand / AR-Mitglied, 4 Wochen, 3–5 Sessions à ~2h. Vertraulich, eigenes Tempo, reale Führungsaufgaben als KI-Lernmaterial.</li>
           <li><strong>Format B · Team Journey</strong> — 5–8 Personen, Gruppeneinheiten + individuelle 1:1-Slots. Gemeinsame Sprache, Multiplikator-Effekt im Gremium.</li>
@@ -373,11 +385,11 @@
         <ul>
           <li>Monatlicher Strategy-Call + Briefing zu KI-Relevanzthemen für Ihr Institut.</li>
           <li>Sparringspartner vor EZB-/BaFin-Gesprächen und AR-Sitzungen.</li>
-          <li>Begleitung bei Use-Case-Portfolio und Governance-Modell — Hans, nicht ein Team, das Hans schickt.</li>
+          <li>Begleitung bei Use-Case-Portfolio und Governance-Modell — ich selbst, nicht ein Team, das ich schicke.</li>
         </ul>
         <div class="card-foot">
           <span class="price">Retainer · 12 Monate</span>
-          <span class="zg">CEO, CIO, COO, CDO — EZB-regulierte Institute</span>
+          <span class="zg">CEO, CIO, COO, CDO — insbesondere auch regulierte Institute</span>
         </div>
       </article>
 
@@ -392,7 +404,7 @@
         </ul>
         <div class="card-foot">
           <span class="price">Tagessatz · ab 6 Monate</span>
-          <span class="zg">EZB-regulierte Institute in Transformations- oder Krisenphase</span>
+          <span class="zg">insbesondere auch regulierte Institute in Transformations- oder Krisenphase</span>
         </div>
       </article>
     </div>
@@ -400,7 +412,7 @@
     <div class="port-flow reveal">
       <b>Einstieg</b> <span class="ar">→</span> vom Vertrauen zum Mandat <span class="ar">→</span> <b>Umsetzung</b>
     </div>
-    <p class="port-os reveal"><b>Self.OS · Team.OS · Enterprise.OS</b> — die Lernarchitektur hinter Produktlinie 01</p>
+    <p class="port-os reveal"><b>Self<span class="o">.</span>Ops · Team<span class="o">.</span>Ops · Enterprise<span class="o">.</span>Ops</b> — die Lernarchitektur hinter Produktlinie 01</p>
   </div>
 </section>
 
@@ -410,19 +422,19 @@
     <span class="eyebrow reveal">Haltung</span>
     <h2 class="h reveal">Bevor wir über Methoden reden, <em>worüber wir reden sollten</em><span class="dot">.</span></h2>
     <div class="belief-grid reveal">
-      <div class="belief">
+      <div class="belief" id="glaube">
         <div class="k">01</div>
         <h3>Was ich glaube</h3>
         <p>Die Zukunft gehört nicht den Organisationen mit der besten Technologie, sondern denen, die am schnellsten lernen und Veränderung wirksam umsetzen.</p>
         <a href="#kontakt">Mehr dazu <span>→</span></a>
       </div>
-      <div class="belief">
+      <div class="belief" id="arbeite">
         <div class="k">02</div>
         <h3>Woran ich gerade arbeite</h3>
-        <p>An meiner eigenen Lernarchitektur — Self.OS, Team.OS, Enterprise.OS — und daran, KI im realen Führungsalltag erfahrbar zu machen, statt im Seminarraum.</p>
+        <p>An meiner eigenen Lernarchitektur — Self<span class="o">.</span>Ops, Team<span class="o">.</span>Ops, Enterprise<span class="o">.</span>Ops — und daran, KI im realen Führungsalltag erfahrbar zu machen, statt im Seminarraum.</p>
         <a href="#ki-reise">Reise zur KI <span>→</span></a>
       </div>
-      <div class="belief">
+      <div class="belief" id="berate">
         <div class="k">03</div>
         <h3>Warum ich heute berate</h3>
         <p>Weil ich diese Transformationen selbst verantwortet habe — in regulierten Strukturen, mit echter Konsequenz. Diese Erfahrung gebe ich weiter, auf Augenhöhe.</p>
@@ -439,10 +451,10 @@
       <div class="reveal">
         <span class="eyebrow">Unterschied</span>
         <h2 class="h">Was ich anders mache <em>als der Wettbewerb</em><span class="dot">.</span></h2>
-        <p class="lead">Die meisten zeigen Jugend, Diversity und Bewegung. Ich biete etwas, das in diesem Markt selten ist: einen Menschen mit echter Verantwortungserfahrung — und Persönlichkeit.</p>
+        <p class="lead">Die meisten reden über Technik und werfen mit Buzzwords um sich. Ich biete etwas, das in diesem Markt selten ist: Persönlichkeit — und jemanden, der erklärt, was wirklich wichtig ist.</p>
       </div>
       <div class="anders-list reveal">
-        <div class="anders-item"><span class="n">01</span><div><h4>Sie reden mit Hans — nicht mit einem Team, das Hans schickt</h4><p>Jedes Gespräch persönlich, vertraulich, ohne Junior-Layer dazwischen.</p></div></div>
+        <div class="anders-item"><span class="n">01</span><div><h4>Sie reden mit mir — nicht mit einem Team, das ich schicke</h4><p>Jedes Gespräch persönlich und vertraulich, ohne Junior-Layer dazwischen.</p></div></div>
         <div class="anders-item"><span class="n">02</span><div><h4>Selbst verantwortet, nicht nur beraten</h4><p>NORD/LB, Mercedes-Benz Bank, Daimler Financial Services — Programme im dreistelligen Millionenbereich, in regulierten Strukturen.</p></div></div>
         <div class="anders-item"><span class="n">03</span><div><h4>Regulatorik als Sprache, nicht als Floskel</h4><p>EU AI Act, DORA, MaRisk, EZB/BaFin — ich muss nicht erklären lassen, worum es geht.</p></div></div>
         <div class="anders-item"><span class="n">04</span><div><h4>Lernen statt Folien</h4><p>KI wird an Ihren realen Führungsaufgaben erfahrbar — nicht an generischen Fallbeispielen.</p></div></div>
@@ -455,7 +467,7 @@
 <section class="section" id="ki-reise">
   <div class="wrap">
     <div class="ki-grid">
-      <div class="ki-photo reveal"><img src="assets/v2/hans-ai-split.jpg" alt="Hans Mörtl — Mensch und KI"></div>
+      <div class="ki-photo reveal"><img src="assets/v2/hans-ai-dialog.jpg" alt="Hans Mörtl im Dialog mit der Maschine"></div>
       <div class="ki-body reveal">
         <span class="eyebrow">Reise zur KI</span>
         <h2 class="h" style="margin-bottom:20px">Ich rede nicht über KI. <em>Ich arbeite mit ihr.</em></h2>
@@ -478,11 +490,11 @@
       </details>
       <details>
         <summary>Für wen ist das gedacht? <span class="pm">+</span></summary>
-        <p>Für Vorstände, Aufsichtsräte und C-Level (CIO, COO, CDO) in EZB-regulierten Instituten, die KI-Governance und Transformation ernsthaft angehen wollen.</p>
+        <p>Für Vorstände, Aufsichtsräte, C-Level-Entscheider (CIO, COO, CDO) und Multiplikatoren, die KI-Governance und Transformation ernsthaft angehen wollen — insbesondere auch in regulierten Instituten.</p>
       </details>
       <details>
         <summary>Arbeite ich wirklich mit Ihnen persönlich? <span class="pm">+</span></summary>
-        <p>Ja. Es gibt kein Junior-Team, das nach dem Pitch übernimmt. Sie sprechen durchgängig mit mir.</p>
+        <p>Ja. Es gibt kein Junior-Team, das nach dem Pitch übernimmt — Sie sprechen durchgängig mit mir. Und wo es Ihrem Anliegen dient, ziehe ich aus meinem Netzwerk gezielt weitere erfahrene, seniore Berater hinzu.</p>
       </details>
       <details>
         <summary>Was kostet eine Zusammenarbeit? <span class="pm">+</span></summary>
@@ -500,7 +512,7 @@
       <div class="reveal">
         <span class="eyebrow">Kontakt</span>
         <h2>Starten Sie Ihre <em>Journey</em><span class="dot">.</span></h2>
-        <p class="contact-personal">„Ich freue mich auf das Gespräch — und auf das, was ich von Ihnen lerne."</p>
+        <p class="contact-personal">„Ich freue mich auf das Gespräch — und auf das, was ich von Ihnen lerne und wir zusammen bewegen können."</p>
         <div class="contact-row"><span class="label">E-Mail</span><span class="val"><a href="mailto:hans@moertl-advisory.com?subject=Gespr%C3%A4ch%20vereinbaren">hans@moertl-advisory.com</a></span></div>
         <div class="contact-row"><span class="label">LinkedIn</span><span class="val"><a href="https://www.linkedin.com/in/hans-moertl/" target="_blank" rel="noopener">linkedin.com/in/hans-moertl</a></span></div>
         <div class="contact-row"><span class="label">Telefon</span><span class="val"><a href="tel:+4915150651723">+49 151 506 517 23</a></span></div>
