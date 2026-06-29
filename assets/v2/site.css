@@ -328,3 +328,6 @@
   .contact-alt a{color:var(--grey-1);border-bottom:1px solid var(--line);padding-bottom:2px}
   .contact-alt a:hover{border-color:var(--accent)}
   @media (max-width:540px){ .cform .row2{grid-template-columns:1fr} }
+  /* Zwischenueberschriften im Fliesstext (Unterseiten) */
+  .prose h3{font-family:var(--f-display);font-weight:600;font-size:21px;line-height:1.25;letter-spacing:-.01em;color:var(--white);margin:38px 0 12px}
+  .prose h3:first-child{margin-top:0}
