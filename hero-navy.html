@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>moertl advisory — Hero-Variante Navy/Orange</title>
+<meta name="theme-color" content="#0A1628">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A1628; --bg-2:#0F1E33;
+    --line:rgba(255,255,255,.10); --line-soft:rgba(255,255,255,.06);
+    --white:#FFFFFF; --grey-1:#C8CEDA; --grey-2:#8A95A3; --grey-3:#97A1B0;
+    --accent:#ED8B36;   /* Orange */
+    --f-display:"Instrument Serif",Georgia,serif;
+    --f-body:"Geist","Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+    --max:1240px; --gutter:clamp(20px,4vw,56px);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--white);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+  .variant-tag{position:fixed;bottom:16px;right:16px;z-index:60;background:var(--accent);color:#0A1628;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border-radius:2px}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;font-size:14.5px;letter-spacing:.02em;border:1px solid var(--line);background:transparent;color:var(--white);cursor:pointer;transition:all .25s ease}
+  .btn:hover{border-color:var(--white);background:rgba(255,255,255,.05)}
+  .btn-primary{background:var(--accent);color:#0A1628;border-color:var(--accent);font-weight:500}
+  .btn-primary:hover{background:transparent;color:var(--accent)}
+  .btn .arrow{transition:transform .25s ease;display:inline-block}
+  .btn:hover .arrow{transform:translateX(4px)}
+
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(10,22,40,.72);border-bottom:1px solid var(--line-soft)}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:14px var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:inline-flex;align-items:center;line-height:0}
+  .brand img{height:62px;width:auto}
+  .nav-links{display:flex;align-items:center;gap:30px;font-size:14.5px}
+  .nav-links a{position:relative;color:var(--grey-1);padding:6px 0;transition:color .2s ease}
+  .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--accent);transition:right .3s ease}
+  .nav-links a:hover{color:var(--white)} .nav-links a:hover::after{right:0}
+  .nav-links .btn{padding:11px 20px}
+  .nav-burger{display:none;background:none;border:0;color:var(--white);width:40px;height:40px;cursor:pointer}
+  .nav-burger span{display:block;width:22px;height:1.5px;background:var(--white);margin:5px auto}
+
+  .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:124px 0 64px}
+  .hero-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,72px);align-items:center;width:100%}
+  .hero-photo{position:relative;border:1px solid var(--line-soft);background:var(--bg-2);aspect-ratio:4/5;overflow:hidden}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:38% center}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,22,40,.55))}
+  .hero-eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey-2);margin-bottom:24px;display:flex;align-items:center;gap:14px}
+  .hero-eyebrow::before{content:"";width:38px;height:1px;background:var(--accent)}
+  .hero h1{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,6vw,78px);line-height:1.02;letter-spacing:-.025em;margin:0 0 26px}
+  .hero h1 em{font-style:italic;color:var(--grey-1)} .dot{color:var(--accent)}
+  .hero-sub{font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:var(--grey-1);font-weight:300;max-width:560px;margin:0 0 18px}
+  .hero-sub strong{color:var(--white);font-weight:500}
+  .hero-micro{font-size:13px;letter-spacing:.05em;color:var(--grey-3);text-transform:uppercase;margin:0 0 36px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+
+  @media (max-width:920px){
+    .nav-links{display:none} .nav-burger{display:block}
+    .hero{min-height:auto;padding-top:108px}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-photo{max-width:440px;order:-1}
+  }
+</style>
+</head>
+<body>
+<span class="variant-tag">Hero-Variante · Navy / Orange</span>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="moertl advisory"><img src="assets/moertl-advisory-logo.png" alt="moertl advisory"></a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#">Leistungen</a>
+      <a href="#">Haltung</a>
+      <a href="#">Reise zur KI</a>
+      <a href="#">FAQ</a>
+      <a href="#" class="btn">Gespräch vereinbaren</a>
+    </nav>
+    <button class="nav-burger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-photo"><img src="assets/v2/hans-hero.jpg" alt="Hans Mörtl"></div>
+      <div class="hero-text">
+        <div class="hero-eyebrow">KI-Governance &amp; Transformation · Vorstände &amp; Aufsichtsräte</div>
+        <h1>Was hält Sie<br><em>nachts wach?</em><span class="dot">.</span></h1>
+        <p class="hero-sub">
+          KI, Regulierung und Transformation bewegen sich schneller, als Governance und
+          Organisation folgen können. <strong>Sie müssen noch nicht wissen, was genau fehlt —
+          Sie spüren nur, dass Orientierung nötig ist.</strong>
+        </p>
+        <p class="hero-micro">Kein Pitch · Keine Verpflichtung</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#">Start your Journey <span class="arrow">→</span></a>
+          <a class="btn" href="#">Gespräch vereinbaren</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

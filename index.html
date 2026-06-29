@@ -23,7 +23,7 @@
     --white:     #F4F3F1;
     --grey-1:    #C3C5C9;
     --grey-2:    #8C8F96;
-    --grey-3:    #5C5F66;
+    --grey-3:    #7A7E87;   /* auf WCAG-AA angehoben (>=4.5:1) */
     --accent:    #C98A4B;   /* warmes Kupfer */
     --accent-2:  #3AA68A;   /* gedämpftes Teal als Sekundärakzent */
 
@@ -91,9 +91,9 @@
     display:flex;align-items:center;justify-content:space-between;gap:24px;
   }
   .nav.scrolled .nav-inner{padding-top:10px;padding-bottom:10px}
-  .brand{font-family:var(--f-display);font-size:24px;letter-spacing:.01em;color:var(--white);display:inline-flex;align-items:baseline;gap:10px}
-  .brand b{font-weight:400}
-  .brand span{font-family:var(--f-body);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey-3)}
+  .brand{display:inline-flex;align-items:center;line-height:0}
+  .brand img{height:62px;width:auto;transition:height .25s ease}
+  .nav.scrolled .brand img{height:50px}
   .nav-links{display:flex;align-items:center;gap:30px;font-size:14.5px}
   .nav-links a{position:relative;color:var(--grey-1);padding:6px 0;transition:color .2s ease}
   .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--accent);transition:right .3s ease}
@@ -262,7 +262,7 @@
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#top" class="brand"><b>moertl</b> advisory <span>dcb</span></a>
+    <a href="#top" class="brand" aria-label="moertl advisory — Startseite"><img src="assets/moertl-advisory-logo.png" alt="moertl advisory"></a>
     <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
       <a href="#haltung">Haltung</a>
