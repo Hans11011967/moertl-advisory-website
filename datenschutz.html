@@ -4,18 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Datenschutz — moertl advisory</title>
-<meta name="theme-color" content="#0A1628">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+<meta name="theme-color" content="#0D1B2A">
+<link rel="stylesheet" href="assets/v2/fonts.css">
 <style>
   :root{
-    --navy-deep:#0A1628; --navy-mid:#0F1E33; --line:rgba(255,255,255,.10); --line-soft:rgba(255,255,255,.06);
-    --white:#FFFFFF; --grey-1:#C8CEDA; --grey-2:#8A95A3; --grey-3:#5A6577; --red:#D72638; --copper:#B08D57;
-    --f-display:"Instrument Serif",Georgia,serif;
-    --f-body:"Geist",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --navy-deep:#0D1B2A; --navy-mid:#102234; --line:rgba(255,255,255,.10); --line-soft:rgba(255,255,255,.06);
+    --white:#FFFFFF; --grey-1:#C8CEDA; --grey-2:#8A95A3; --grey-3:#5A6577; --red:#FF8A00; --copper:#B08D57;
+    --f-display:"Montserrat",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --f-body:"Montserrat",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
     --gutter:clamp(20px,4vw,56px);
   }
   *{box-sizing:border-box} html{scroll-behavior:smooth}
@@ -34,19 +30,19 @@
   header.page-head{padding:160px 0 64px}
   .page-head .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey-2);margin-bottom:24px}
   .page-head .eyebrow::before{content:"";width:32px;height:1px;background:var(--red)}
-  .page-head h1{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,5.6vw,64px);line-height:1.06;letter-spacing:-.02em;margin:0 0 16px}
+  .page-head h1{font-family:var(--f-display);font-weight:600;font-size:clamp(40px,5.6vw,64px);line-height:1.06;letter-spacing:-.02em;margin:0 0 16px}
   .page-head h1 .dot{color:var(--red)}
-  .page-head p.intro{font-size:17px;color:var(--grey-1);font-weight:300;max-width:640px;margin:0}
+  .page-head p.intro{font-size:17px;color:var(--grey-1);font-weight:400;max-width:640px;margin:0}
 
   main{padding:0 0 96px;border-top:1px solid var(--line-soft)}
   main section{padding:48px 0;border-bottom:1px solid var(--line-soft)}
   main section:last-of-type{border-bottom:0}
-  main h2{font-family:var(--f-display);font-weight:400;font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 24px;color:var(--white)}
+  main h2{font-family:var(--f-display);font-weight:600;font-size:28px;line-height:1.15;letter-spacing:-.01em;margin:0 0 24px;color:var(--white)}
   main h2 em{font-style:italic;color:var(--grey-1)}
   main h3{font-family:var(--f-body);font-weight:500;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-2);margin:24px 0 10px}
-  main p{font-size:16px;line-height:1.7;color:var(--grey-1);font-weight:300;margin:0 0 14px}
+  main p{font-size:16px;line-height:1.7;color:var(--grey-1);font-weight:400;margin:0 0 14px}
   main p strong{color:var(--white);font-weight:500}
-  main ul{margin:0 0 14px;padding:0 0 0 22px;color:var(--grey-1);font-weight:300}
+  main ul{margin:0 0 14px;padding:0 0 0 22px;color:var(--grey-1);font-weight:400}
   main ul li{margin-bottom:8px;line-height:1.65}
   main a.link{border-bottom:1px solid var(--line);padding-bottom:1px;transition:border-color .2s ease}
   main a.link:hover{border-color:var(--red);color:var(--white)}
@@ -166,15 +162,12 @@
     </section>
 
     <section>
-      <h2>Schriften (Google Fonts)<em>.</em></h2>
+      <h2>Schriften<em>.</em></h2>
       <p>
-        Diese Website verwendet Schriftarten von Google Fonts. Beim Aufruf werden Schriftdateien von
-        Servern der Google Ireland Limited geladen, wobei Ihre IP-Adresse übermittelt wird.
-        Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (einheitliche Darstellung der Website).
-      </p>
-      <p>
-        Weitere Informationen:
-        <a href="https://policies.google.com/privacy" class="link" target="_blank" rel="noopener">Google Datenschutzerklärung</a>.
+        Diese Website verwendet die Schriftart „Montserrat". Die Schriftdateien werden
+        <strong>lokal von meinem eigenen Server ausgeliefert</strong> und nicht von externen Servern
+        (z. B. Google Fonts) nachgeladen. Beim Aufruf der Schriften wird daher
+        <strong>keine Verbindung zu Google hergestellt und keine IP-Adresse an Dritte übermittelt</strong>.
       </p>
     </section>
 
