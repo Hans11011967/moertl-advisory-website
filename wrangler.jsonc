@@ -2,10 +2,14 @@
   "name": "moertl-advisory-website",
   "compatibility_date": "2026-05-19",
   "main": "worker.js",
+  "workers_dev": true,
   "assets": {
     "directory": "./",
     "binding": "ASSETS"
   },
+  "routes": [
+    { "pattern": "denkraum.moertl-advisory.com", "custom_domain": true }
+  ],
   "vars": {
     "MAIL_FROM": "moertl advisory Kontakt <noreply@svr-jugend.org>",
     "MAIL_TO": "hans@moertl-advisory.com"
