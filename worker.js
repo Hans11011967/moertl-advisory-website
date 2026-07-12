@@ -10,6 +10,12 @@ export default {
       }
       return handleContact(request, env, ctx);
     }
+    // Denkraum-Subdomain: an der Wurzel die Denkraum-Landingpage statt der v2-Startseite
+    if (url.pathname === "/" && url.hostname === "denkraum.moertl-advisory.com") {
+      const u = new URL(request.url);
+      u.pathname = "/denkraum";
+      return env.ASSETS.fetch(new Request(u.toString(), request));
+    }
     // Alles andere: statische Seite ausliefern
     return env.ASSETS.fetch(request);
   },
