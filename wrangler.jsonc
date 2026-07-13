@@ -9,7 +9,9 @@
     "run_worker_first": true
   },
   "routes": [
-    { "pattern": "denkraum.moertl-advisory.com", "custom_domain": true }
+    { "pattern": "denkraum.moertl-advisory.com", "custom_domain": true },
+    { "pattern": "moertl-advisory.com", "custom_domain": true },
+    { "pattern": "www.moertl-advisory.com", "custom_domain": true }
   ],
   "vars": {
     "MAIL_FROM": "moertl advisory Kontakt <noreply@svr-jugend.org>",

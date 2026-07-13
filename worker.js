@@ -4,6 +4,11 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    // www -> apex (301), damit es eine kanonische Adresse gibt
+    if (url.hostname === "www.moertl-advisory.com") {
+      url.hostname = "moertl-advisory.com";
+      return Response.redirect(url.toString(), 301);
+    }
     if (url.pathname === "/api/contact") {
       if (request.method !== "POST") {
         return json({ ok: false, error: "Method not allowed" }, 405);
