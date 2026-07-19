@@ -5,8 +5,69 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Denkraum | moertl advisory</title>
+<meta name="description" content="Hier entsteht der Denkraum von Hans Mörtl — ein Ort, an dem Denken sichtbar wird. Diese Seite ist selbst die erste Denkspur.">
 <meta name="theme-color" content="#0D1B2A">
 <link rel="stylesheet" href="assets/v2/site.css">
+<style>
+  /* ---------- Denkraum-Baustellenseite (seitenlokale Stile) ---------- */
+
+  /* erste Sektion unter der fixierten Navigation freistellen */
+  body > .section:first-of-type{padding-top:clamp(150px,20vw,190px)}
+
+  /* Marken-Quadrat: immer eckig (Styleguide), sitzt wie ein Punkt auf der Grundlinie */
+  .sq{display:inline-block;width:.44em;height:.44em;background:var(--accent);vertical-align:baseline;margin-left:.12em}
+
+  .ds-intro p{color:var(--grey-1);max-width:640px;line-height:1.7;margin:18px 0 0}
+  .ds-intro p strong{color:var(--white);font-weight:600}
+
+  /* ---------- Die Denkspur: Ereignisliste an einer Bleistiftlinie ---------- */
+  .spur{list-style:none;margin:44px 0 0;padding:0;max-width:560px;position:relative}
+  /* Bleistiftlinie: fein, leicht ungleichmäßig (zwei überlagerte Hairlines) */
+  .spur::before{
+    content:"";position:absolute;top:6px;bottom:34px;left:4px;width:1px;
+    background:linear-gradient(to bottom,rgba(197,208,220,.38),rgba(197,208,220,.22));
+  }
+  /* offene Zukunft: die Linie läuft unterhalb von „Heute" gestrichelt aus */
+  .spur::after{
+    content:"";position:absolute;bottom:-2px;left:4px;width:1px;height:36px;
+    background:repeating-linear-gradient(to bottom,rgba(197,208,220,.34) 0 3px,transparent 3px 8px);
+  }
+  .spur li{position:relative;padding:0 0 26px 34px}
+  .spur li:last-child{padding-bottom:0}
+  /* Marker: kleine Quadrate, mit der Zeit „schwereres Papier" (Reife = Opazität) */
+  .spur li::before{
+    content:"";position:absolute;left:0;top:6px;width:9px;height:9px;
+    border:1px solid rgba(197,208,220,.55);background:rgba(197,208,220,.10);
+  }
+  .spur li:nth-child(2)::before{background:rgba(197,208,220,.22)}
+  .spur li:nth-child(3)::before{background:rgba(197,208,220,.34)}
+  .spur li:nth-child(4)::before{background:rgba(197,208,220,.46)}
+  /* Heute: das orange Quadrat */
+  .spur li.heute::before{width:11px;height:11px;left:-1px;border:0;background:var(--accent)}
+  .spur .d{
+    font-family:var(--f-daten,-apple-system,sans-serif);font-variant-numeric:tabular-nums;
+    display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey-2);margin-bottom:4px;
+  }
+  .spur li.heute .d{color:var(--accent)}
+  .spur b{display:block;font-weight:600;color:var(--white);font-size:16.5px;line-height:1.35}
+  .spur span{display:block;color:var(--grey-1);font-size:15px;line-height:1.55;margin-top:2px}
+  .spur-note{margin:30px 0 0;max-width:560px;color:var(--grey-2);font-size:14.5px;line-height:1.6}
+
+  /* ---------- Stationen ---------- */
+  .stationen{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px}
+  @media (max-width:720px){.stationen{grid-template-columns:1fr}}
+  .station{border:1px solid var(--line);background:var(--bg-2);padding:26px 26px 24px}
+  .station h3{font-family:var(--f-display);font-weight:600;font-size:19px;line-height:1.25;margin:0 0 8px;letter-spacing:-.01em}
+  .station p{margin:0;color:var(--grey-1);font-size:15px;line-height:1.6}
+  .quer{margin:26px 0 0;max-width:720px;color:var(--grey-1);font-size:15.5px;line-height:1.7;
+    border-left:2px solid var(--accent);padding-left:18px}
+
+  /* ---------- Mitdenken: die offene Kante ---------- */
+  .mitdenken{margin-top:56px;max-width:640px;border:1px dashed var(--line);border-left:2px solid var(--accent);padding:28px 30px}
+  .mitdenken .tag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .mitdenken p{margin:0;color:var(--grey-1);font-size:15.5px;line-height:1.65}
+  .mitdenken a{color:var(--white);font-weight:600;border-bottom:1px solid var(--accent)}
+</style>
 </head>
 <body>
 
@@ -14,24 +75,94 @@
   <div class="nav-inner">
     <a href="/" class="brand" aria-label="Denkraum — Startseite"><img src="assets/v2/logo-moertl.png" alt="moertl advisory"></a>
     <nav class="nav-links" aria-label="Navigation">
+      <a href="index.html">Zur Beratungsseite</a>
       <a href="index.html#kontakt" class="btn btn-talk">Gespräch vereinbaren</a>
     </nav>
   </div>
 </header>
 
-<section class="section" style="min-height:100svh;display:flex;align-items:center;text-align:center">
-  <div class="wrap" style="max-width:760px">
-    <span class="eyebrow" style="justify-content:center">Denkraum</span>
-    <h2 class="h h-sm" style="margin-left:auto;margin-right:auto">Ein Raum für Gedanken, Haltung <em>und den Weg dahinter</em><span class="dot">.</span></h2>
-    <p class="lead" style="margin:8px auto 0">Hier entsteht der Denkraum von Hans Mörtl — der Ort hinter der Beratung: was ich glaube, woran ich gerade arbeite, warum ich heute berate und woher ich komme.</p>
+<section class="section">
+  <div class="wrap" style="max-width:900px">
+    <span class="eyebrow">Denkraum · im Entstehen</span>
+    <h2 class="h">Ein Ort, an dem Denken sichtbar wird<span class="dot">.</span></h2>
+    <div class="ds-intro">
+      <p class="lead" style="margin-top:0">Hier entsteht der Denkraum von Hans Mörtl. Kein Blog, keine Wissensdatenbank, kein Archiv — sondern ein Raum, in dem Ideen entstehen, sich verbinden und reifen. Manche werden Projekte. Manche laden zum Mitdenken ein.</p>
+      <p>Die künftige Navigation heißt <strong>„Denkspuren"</strong>: ein warm hinterleuchteter Arbeitstisch mit transluzenten Blättern — und jede Idee trägt ihre Entstehungsgeschichte sichtbar am Rand. Wann sie als Skizze auftauchte, wovon sie sich abzweigte, wann sie ruhte, wann sie wieder aufgenommen wurde.</p>
+    </div>
+  </div>
+</section>
 
-    <div class="placeholder" style="text-align:left;max-width:640px;margin-left:auto;margin-right:auto">
-      <div class="tag">Platzhalter</div>
-      <p>Diese Eingangsseite gestalten wir noch. Ein erster Inhalt ist aber schon da:</p>
+<section class="section">
+  <div class="wrap" style="max-width:900px">
+    <span class="eyebrow">Die erste Denkspur</span>
+    <h2 class="h h-sm">Diese Seite zeigt ihr eigenes Werden<span class="dot">.</span></h2>
+    <p class="lead">Wie das aussehen wird? Ungefähr so — denn diese Baustellenseite ist selbst die erste Denkspur:</p>
+
+    <ol class="spur">
+      <li>
+        <span class="d">Mai 2026</span>
+        <b>Als Skizze notiert</b>
+        <span>„Denkraum" taucht als Platzhalter auf der neuen Website auf — eine Tür, hinter der noch nichts steht.</span>
+      </li>
+      <li>
+        <span class="d">Jul 2026</span>
+        <b>Konzeptwettbewerb</b>
+        <span>Elf KI-Modelle entwerfen 33 Navigationskonzepte — und liefern vor allem eines: die Landkarte des Naheliegenden.</span>
+      </li>
+      <li>
+        <span class="d">Jul 2026</span>
+        <b>Abgezweigt aus der Synthese</b>
+        <span>Der eigene Entwurf „Denkspuren" entsteht: der Tisch, der sein Werden zeigt.</span>
+      </li>
+      <li>
+        <span class="d">Jul 2026</span>
+        <b>Prototyp gebaut</b>
+        <span>„Denkspuren" ist klickbar — Lichttisch, Blätter, Spuren.</span>
+      </li>
+      <li class="heute">
+        <span class="d">Heute</span>
+        <b>In Arbeit</b>
+        <span>Diese Seite geht als erste veröffentlichte Spur online. Der Tisch selbst wird gerade gebaut.</span>
+      </li>
+    </ol>
+    <p class="spur-note">Die Linie läuft weiter — was hier als Nächstes liegt, entscheidet sich am Tisch.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:900px">
+    <span class="eyebrow">Woher ich komme</span>
+    <h2 class="h h-sm">Die Stationen hinter dem Denkraum<span class="dot">.</span></h2>
+    <p class="lead">Der Denkraum ist Baustelle — der Weg dahinter nicht. Rund 30 Jahre Führungs- und Transformationsverantwortung, verdichtet:</p>
+
+    <div class="stationen">
+      <div class="station">
+        <h3>Mercedes-Benz &amp; Daimler</h3>
+        <p>Prägende Jahre in einem Konzern, in dem Qualität, Skalierung und internationale Zusammenarbeit Alltag sind.</p>
+      </div>
+      <div class="station">
+        <h3>Mercedes-Benz Financial Services</h3>
+        <p>Finanzdienstleistung im Automobilkontext: großes Transformationsprogramm, internationale Verantwortung als CIO Europe und Global CTO.</p>
+      </div>
+      <div class="station">
+        <h3>Mercedes-Benz Bank</h3>
+        <p>Bankgeschäft unter Vollaufsicht: als CIO und Mitglied der Geschäftsleitung Verantwortung für IT, Architektur und regulatorische Anforderungen.</p>
+      </div>
+      <div class="station">
+        <h3>NORD/LB</h3>
+        <p>Landesbank in der Restrukturierung: Chief Data Officer und Programmverantwortung unter hohem regulatorischem und wirtschaftlichem Druck.</p>
+      </div>
     </div>
 
-    <div class="page-actions" style="justify-content:center;border-top:0;padding-top:0;margin-top:28px">
-      <a class="btn btn-primary" href="werdegang.html">Für den, den es interessiert · meine Stationen <span class="arrow">→</span></a>
+    <p class="quer">Quer durch diese Stationen: CIO-, CTO-, CDO- und Programmverantwortung · internationale Führung über Länder und Zeitzonen · Transformation im regulierten Umfeld — inklusive Prüfungen und Dialog mit EZB und BaFin.</p>
+
+    <div class="page-actions">
+      <a class="btn btn-primary" href="werdegang.html">Der ganze Weg — bis ins Detail <span class="arrow">→</span></a>
+    </div>
+
+    <div class="mitdenken">
+      <div class="tag">Mitdenker willkommen</div>
+      <p>Manche Blätter auf dem Tisch werden bewusst offen bleiben — an ihrer Kante steht, was fehlt. Wer jetzt schon mitdenken will: eine E-Mail genügt. <a href="mailto:hans@moertl-advisory.com">hans@moertl-advisory.com</a></p>
     </div>
   </div>
 </section>
@@ -45,7 +176,8 @@
 
 <script>
   const nav=document.getElementById('nav');
-  window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>12)},{passive:true});
+  const onScroll=()=>{nav.classList.toggle('scrolled',window.scrollY>12)};
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 </script>
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "157723c7617a4c63b42c4258c04b9618"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
