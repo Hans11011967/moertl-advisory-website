@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Denkraum — moertl advisory</title>
+<meta name="description" content="Denkraum von Hans Moertl: Notizen zu Architekturdenken, KI-Agenten und Transformation. Warum Geschwindigkeit aus Architektur kommt — nicht aus Hype.">
+<meta name="theme-color" content="#0A1628">
+<meta name="robots" content="index,follow">
+
+<style>
+  /* Lokal gehostete Schriften — keine externen Requests */
+  @font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/instrument-serif.woff2") format("woff2")}
+  @font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url("fonts/instrument-serif-italic.woff2") format("woff2")}
+  @font-face{font-family:"Geist";font-style:normal;font-weight:300 600;font-display:swap;src:url("fonts/geist-var.woff2") format("woff2")}
+
+  :root{
+    --navy-deep:#0A1628; --navy-mid:#0F1E33; --navy-soft:#142840;
+    --line:rgba(255,255,255,.10); --line-soft:rgba(255,255,255,.06);
+    --white:#FFFFFF; --grey-1:#C8CEDA; --grey-2:#8A95A3; --grey-3:#5A6577;
+    --red:#D72638; --copper:#B08D57;
+    --f-display:"Instrument Serif","Iowan Old Style",Georgia,serif;
+    --f-body:"Geist","Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --max:960px; --gutter:clamp(20px,4vw,56px);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--navy-deep);color:var(--white);font-family:var(--f-body);
+    font-weight:400;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--red);color:var(--white)}
+  em{font-style:italic}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+
+  /* --- Nav / Masthead --- */
+  header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+    background:rgba(10,22,40,.72);border-bottom:1px solid var(--line-soft)}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:16px var(--gutter);
+    display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand-row{display:flex;align-items:center;gap:14px}
+  .brand img{height:26px;width:auto}
+  .brand-tag{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey-2)}
+  .brand-tag b{color:var(--white);font-weight:500}
+  .nav-back{font-size:14px;color:var(--grey-1);border-bottom:1px solid var(--line);padding-bottom:3px;transition:border-color .2s ease,color .2s ease}
+  .nav-back:hover{border-color:var(--red);color:var(--white)}
+
+  /* --- Hero --- */
+  .hero{padding:clamp(72px,12vw,140px) 0 clamp(40px,7vw,80px)}
+  .hero .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:12px;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--grey-2);margin-bottom:26px}
+  .hero .eyebrow::before{content:"";width:34px;height:1px;background:var(--copper)}
+  .hero h1{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,6.4vw,76px);
+    line-height:1.04;letter-spacing:-.02em;margin:0 0 26px;max-width:16ch}
+  .hero h1 .dot{color:var(--red)}
+  .hero p.lead{font-size:clamp(18px,2.2vw,22px);line-height:1.55;color:var(--grey-1);
+    font-weight:300;max-width:60ch;margin:0}
+
+  /* --- Artikel / Prosa --- */
+  main{padding:clamp(24px,5vw,56px) 0 clamp(80px,12vw,140px)}
+  article{border-top:1px solid var(--line-soft);padding-top:clamp(40px,6vw,72px)}
+  .article-meta{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-3);margin-bottom:22px}
+  article h2{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,3.6vw,44px);
+    line-height:1.12;letter-spacing:-.01em;margin:52px 0 22px;max-width:22ch}
+  article h2:first-of-type{margin-top:0}
+  article h2 em{color:var(--grey-1)}
+  article p{font-size:18px;line-height:1.75;color:var(--grey-1);font-weight:300;margin:0 0 20px;max-width:68ch}
+  article p strong{color:var(--white);font-weight:500}
+  article p em{color:var(--copper);font-style:italic}
+  article a.link{color:var(--white);border-bottom:1.5px solid rgba(215,38,56,.55);padding-bottom:2px;transition:border-color .2s ease}
+  article a.link:hover{border-color:var(--red)}
+  .figure{margin:44px 0;border:1px solid var(--line-soft);border-radius:6px;overflow:hidden;background:var(--navy-mid)}
+  .figure img{width:100%}
+  .figure figcaption{font-size:13px;color:var(--grey-3);padding:12px 16px;border-top:1px solid var(--line-soft)}
+  .pull{font-family:var(--f-display);font-style:italic;font-size:clamp(24px,3vw,34px);
+    line-height:1.25;color:var(--white);margin:44px 0;padding-left:22px;border-left:2px solid var(--red);max-width:24ch}
+
+  /* --- Footer --- */
+  footer{border-top:1px solid var(--line-soft);background:var(--navy-mid)}
+  .foot-inner{max-width:var(--max);margin:0 auto;padding:40px var(--gutter);
+    display:flex;flex-wrap:wrap;gap:18px 32px;align-items:center;justify-content:space-between;
+    font-size:14px;color:var(--grey-3)}
+  .foot-links{display:flex;gap:22px;flex-wrap:wrap}
+  .foot-links a{color:var(--grey-1);border-bottom:1px solid var(--line);padding-bottom:2px}
+  .foot-links a:hover{border-color:var(--red);color:var(--white)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand-row">
+      <a href="https://moertl-advisory.com" class="brand" aria-label="moertl advisory">
+        <img src="assets/moertl-advisory-logo.png" alt="moertl advisory">
+      </a>
+      <span class="brand-tag"><b>Denkraum</b></span>
+    </div>
+    <a class="nav-back" href="https://moertl-advisory.com">Zur Advisory-Seite →</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Denkraum</div>
+    <h1>Gedanken, die vor der Beratung kommen<span class="dot">.</span></h1>
+    <p class="lead">
+      Ein Ort für das Denken hinter der Arbeit: Notizen zu Architektur, KI-Agenten und
+      Transformation — aus über 30 Jahren an der Schnittstelle von Geschäft und Technologie.
+      Kein Hype, keine Buzzwords. Der erste Text handelt davon, warum Geschwindigkeit selten
+      aus Werkzeugen kommt — und fast immer aus Architektur.
+    </p>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+    <article>
+      <div class="article-meta">Essay · Architektur &amp; KI</div>
+
+      <h2>Architekturdenken ist die stille <em>Voraussetzung von Geschwindigkeit</em><span style="color:var(--red)">.</span></h2>
+
+      <p>
+        Lange bevor KI-Agenten zum Alltagsthema wurden, ging es in großen IT-Organisationen um
+        ähnliche Grundfragen: Wie werden Prozesse maschinenverständlich? Wie lassen sich Services,
+        Daten und Entscheidungen orchestrieren?
+        <em>Wie wird Architektur zur Grundlage von Geschäft — und nicht nur zur Beschreibung von Technologie?</em>
+      </p>
+
+      <p>
+        Als Senior Manager Processes, Methods &amp; Tools bei DaimlerChrysler haben wir genau daran
+        gearbeitet: mit einem Domänenmodell, einem globalen Portfolio-Management-Ansatz, der
+        Projektmethodik HOUSTON.IT und Architekturprinzipien für komplexe Organisationen. Es ging
+        nie um Technik um ihrer selbst willen, sondern um die Frage, wie ein Konzern schneller vom
+        Geschäftsziel zur funktionierenden Lösung kommt.
+      </p>
+
+      <figure class="figure">
+        <img src="assets/think-architecture.png" alt="Geschäft, Architektur, Technologie — das Zusammenspiel der drei Ebenen">
+        <figcaption>Drei Ebenen, eine Reihenfolge — ihr Zusammenspiel entscheidet über Geschwindigkeit, nicht das einzelne Werkzeug.</figcaption>
+      </figure>
+
+      <p>
+        2007 entstand in meiner Abteilung die
+        <a href="https://www.cedix.de/DiplArb/MichHerr.pdf" target="_blank" rel="noopener" class="link">Dissertation von Dr. Michael Herrmann zu semantischen Web Services</a>.
+        Sie wurde später im Kontext des BITKOM Awards „Bestes SOA-Industrieprojekt 2007" ausgezeichnet.
+        In der dazugehörigen Publikation
+        <a href="https://www.semanticscholar.org/paper/Real-life-SOA-experiences-%3A-Top-Down-approach-based-Herrmann-Dalferth/2dfc70c8b267bd0b1dd01ec376cc6cab41047752" target="_blank" rel="noopener" class="link">„Real-life SOA experiences"</a>
+        hat <a href="https://www.linkedin.com/in/dr-michael-herrmann-561027172/" target="_blank" rel="noopener" class="link">Michael</a>
+        mich netterweise als Co-Autor aufgeführt — die wissenschaftliche Arbeit und inhaltliche
+        Tiefe lagen bei ihm.
+      </p>
+
+      <p class="pull">Die vielleicht wichtigste Erkenntnis damals: Wir haben gesehen, was noch nicht ging.</p>
+
+      <p>
+        Zwischen Prozessbeschreibung und ausführbarem Code war noch zu viel Distanz; manche Ansätze
+        wie BPEL waren zu schwerfällig für die praktische Geschäftsrealität. Die Idee war richtig —
+        die Werkzeuge trugen noch nicht.
+      </p>
+
+      <p>
+        Heute fällt zusammen, was lange unterwegs war. KI, Agenten, APIs, Automatisierung und moderne
+        Plattformen verkürzen diese Strecke dramatisch: zwischen Idee, Prozess, Entscheidung und
+        Umsetzung liegen nicht mehr zwingend Jahre oder Monate, sondern oft nur noch Wochen oder Tage.
+        Aber wer KI heute klug einsetzt, kommt nicht aus dem Hype.
+        <em>Er kommt aus Architektur — und versteht, dass Transformation immer auch Arbeit an Führung,
+        Organisation und Verhalten ist.</em>
+      </p>
+
+      <p>
+        Das ist der rote Faden dieses Denkraums: nicht die neueste Technologie zu feiern, sondern zu
+        verstehen, welche Struktur sie erst wirksam macht.
+      </p>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div>© 2026 moertl advisory · Denkraum</div>
+    <nav class="foot-links" aria-label="Rechtliches">
+      <a href="https://moertl-advisory.com">Advisory</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

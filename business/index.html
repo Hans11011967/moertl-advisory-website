@@ -7,11 +7,12 @@
 <meta name="description" content="Executive Advisory für CIOs, CTOs, COOs und CDOs. Über 30 Jahre eigene C-Level-Verantwortung bei Mercedes-Benz Bank, Daimler Financial Services und NORD/LB. Self.Ops · Team.Ops · Enterprise.Ops.">
 <meta name="theme-color" content="#0A1628">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
+  /* Lokal gehostete Schriften — keine externen Requests (Datenschutz/Souveränität) */
+  @font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/instrument-serif.woff2") format("woff2")}
+  @font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url("fonts/instrument-serif-italic.woff2") format("woff2")}
+  @font-face{font-family:"Geist";font-style:normal;font-weight:300 600;font-display:swap;src:url("fonts/geist-var.woff2") format("woff2")}
+
   :root{
     --navy-deep: #0A1628;
     --navy-mid:  #0F1E33;
@@ -1002,7 +1003,7 @@
   </div>
 
   <div class="wrap hero-inner">
-    <div class="hero-eyebrow">moertl transformation advisory</div>
+    <div class="hero-eyebrow">moertl advisory</div>
     <h1>
       30 Jahre Verantwortung —<br>
       <em>und was daraus geworden ist<span class="dot">.</span></em>
@@ -1259,59 +1260,6 @@
   </div>
 </section>
 
-<!-- ===================== THINKING / Geschäft zur Wirkung ===================== -->
-<section class="section" id="thinking">
-  <div class="wrap">
-    <div class="think-grid">
-      <div class="reveal">
-        <span class="eyebrow">Vom Geschäft zur Wirkung</span>
-        <h2 style="font-family:var(--f-display);font-weight:400;font-size:clamp(34px,4.4vw,56px);line-height:1.1;letter-spacing:-.02em;margin:0 0 28px;max-width:18ch;">
-          Architekturdenken ist die stille <span style="color:var(--grey-1)">Voraussetzung von Geschwindigkeit</span><span class="dot" style="color:var(--red)">.</span>
-        </h2>
-        <p class="section-lead" style="margin-bottom:18px">
-          Lange bevor KI-Agenten zum Alltagsthema wurden, ging es in großen IT-Organisationen um
-          ähnliche Grundfragen: Wie werden Prozesse maschinenverständlich? Wie lassen sich Services,
-          Daten und Entscheidungen orchestrieren?
-          <em style="color:var(--copper);font-style:italic">Wie wird Architektur zur Grundlage von Geschäft —
-          und nicht nur zur Beschreibung von Technologie?</em>
-        </p>
-        <p class="section-lead" style="margin-bottom:18px">
-          Als Senior Manager Processes, Methods &amp; Tools bei DaimlerChrysler haben wir daran gearbeitet:
-          mit einem Domänenmodell, einem globalen Portfolio-Management-Ansatz, der Projektmethodik
-          HOUSTON.IT und Architekturprinzipien für komplexe Organisationen.
-        </p>
-        <p class="section-lead" style="margin-bottom:18px">
-          2007 entstand in meiner Abteilung die
-          <a href="https://www.cedix.de/DiplArb/MichHerr.pdf" target="_blank" rel="noopener" style="color:var(--white);border-bottom:1.5px solid rgba(215,38,56,.55);padding-bottom:2px">Dissertation von Dr. Michael Herrmann zu semantischen Web Services</a>.
-          Sie wurde später im Kontext des BITKOM Awards „Bestes SOA-Industrieprojekt 2007" ausgezeichnet.
-          In der dazugehörigen Publikation
-          <a href="https://www.semanticscholar.org/paper/Real-life-SOA-experiences-%3A-Top-Down-approach-based-Herrmann-Dalferth/2dfc70c8b267bd0b1dd01ec376cc6cab41047752" target="_blank" rel="noopener" style="color:var(--white);border-bottom:1.5px solid rgba(215,38,56,.55);padding-bottom:2px">„Real-life SOA experiences"</a>
-          hat <a href="https://www.linkedin.com/in/dr-michael-herrmann-561027172/" target="_blank" rel="noopener" style="color:var(--white);border-bottom:1.5px solid rgba(215,38,56,.55);padding-bottom:2px">Michael</a>
-          mich netterweise als Co-Autor aufgeführt — die wissenschaftliche Arbeit und inhaltliche
-          Tiefe lagen bei ihm.
-        </p>
-        <p class="section-lead" style="margin-bottom:18px">
-          Die vielleicht wichtigste Erkenntnis damals: <em style="color:var(--copper);font-style:italic">Wir haben gesehen, was noch nicht ging.</em>
-          Zwischen Prozessbeschreibung und ausführbarem Code war noch zu viel Distanz;
-          manche Ansätze wie BPEL waren zu schwerfällig für die praktische Geschäftsrealität.
-        </p>
-        <p class="section-lead">
-          Heute fällt zusammen, was lange unterwegs war. KI, Agenten, APIs, Automatisierung und
-          moderne Plattformen verkürzen diese Strecke dramatisch: zwischen Idee, Prozess,
-          Entscheidung und Umsetzung liegen nicht mehr zwingend Jahre oder Monate, sondern oft nur
-          noch Wochen oder Tage. Aber wer KI heute klug einsetzt, kommt nicht aus dem Hype.
-          <em style="color:var(--copper);font-style:italic">Er kommt aus Architektur — und versteht, dass Transformation immer auch Arbeit an Führung,
-          Organisation und Verhalten ist.</em>
-        </p>
-      </div>
-
-      <div class="think-visual reveal" aria-hidden="true">
-        <img src="assets/think-architecture.png" alt="Geschäft, Architektur, Technologie — Hans Mörtl">
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== SELF.OPS ===================== -->
 <section class="section selfops" id="self-ops">
   <div class="wrap">
@@ -1441,7 +1389,7 @@
     <div class="foot-brand">
       <img src="assets/moertl-advisory-logo.png" alt="moertl advisory">
     </div>
-    <div>© 2026 moertl transformation advisory</div>
+    <div>© 2026 moertl advisory</div>
     <div class="foot-links">
       <a href="/impressum.html">Impressum</a>
       <a href="/datenschutz.html">Datenschutz</a>

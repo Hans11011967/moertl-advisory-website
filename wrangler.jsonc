@@ -2,6 +2,6 @@
   "name": "moertl-advisory-website",
   "compatibility_date": "2026-05-19",
   "assets": {
-    "directory": "./"
+    "directory": "./denkraum"
   }
 }
